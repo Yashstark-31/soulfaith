@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Yash Kumar</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,122 +13,123 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:Poppins;
 }
 
 body{
-font-family:Poppins;
-background:#000;
-color:#d4af37;
 min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
+background:#000;
+color:#d4af37;
 overflow:hidden;
 }
 
-/* RGB glow background */
+/* animated background glow */
 
 body::before{
 content:"";
 position:absolute;
-width:900px;
-height:900px;
+width:600px;
+height:600px;
 background:radial-gradient(circle,#d4af37,transparent 70%);
-opacity:0.12;
-animation:spin 18s linear infinite;
+opacity:0.15;
+animation:rotate 18s linear infinite;
 }
 
-@keyframes spin{
+@keyframes rotate{
 0%{transform:rotate(0deg)}
 100%{transform:rotate(360deg)}
 }
 
-/* main card */
+/* card */
 
-.container{
-width:92%;
-max-width:520px;
-padding:45px 30px;
-text-align:center;
+.card{
+position:relative;
+width:380px;
+padding:40px;
+border-radius:20px;
 background:rgba(20,20,20,0.85);
-border-radius:22px;
-border:1px solid rgba(212,175,55,0.4);
 backdrop-filter:blur(15px);
-box-shadow:0 0 35px rgba(212,175,55,0.25);
+text-align:center;
+border:1px solid rgba(212,175,55,0.5);
+box-shadow:0 0 30px rgba(212,175,55,0.2);
 }
 
-/* welcome */
+/* animated border */
+
+.card::before{
+content:"";
+position:absolute;
+top:-2px;
+left:-2px;
+right:-2px;
+bottom:-2px;
+border-radius:20px;
+background:linear-gradient(45deg,#d4af37,transparent,#d4af37);
+z-index:-1;
+animation:borderGlow 6s linear infinite;
+}
+
+@keyframes borderGlow{
+0%{filter:hue-rotate(0deg)}
+100%{filter:hue-rotate(360deg)}
+}
 
 .welcome{
-letter-spacing:4px;
 font-size:13px;
+letter-spacing:4px;
 opacity:0.8;
+margin-bottom:15px;
+}
+
+h1{
+font-size:34px;
+margin-bottom:20px;
+font-weight:600;
+}
+
+.section{
+margin-top:20px;
+}
+
+.section h2{
+font-size:18px;
 margin-bottom:10px;
 }
 
-/* name */
-
-h1{
-font-family:'Playfair Display';
-font-size:46px;
-margin-bottom:22px;
-}
-
-/* section */
-
-.section{
-margin-top:26px;
-}
-
-/* cards */
-
-.card{
+.box{
+line-height:1.8;
+font-size:14px;
 background:rgba(255,255,255,0.05);
-border:1px solid rgba(212,175,55,0.35);
-border-radius:18px;
-padding:26px;
-line-height:1.9;
-font-size:16px;
-transition:0.4s;
-}
-
-.card:hover{
-transform:translateY(-6px);
-box-shadow:0 0 20px rgba(212,175,55,0.4);
-}
-
-/* section title */
-
-.section h2{
-font-size:20px;
-margin-bottom:12px;
+border:1px solid rgba(212,175,55,0.3);
+padding:16px;
+border-radius:12px;
 }
 
 /* instagram button */
 
 .btn{
-display:inline-block;
-margin-top:22px;
-padding:16px 40px;
-border-radius:16px;
+display:block;
+margin-top:20px;
+padding:14px;
+border-radius:14px;
 text-decoration:none;
-background:linear-gradient(45deg,#d4af37,#ffd700);
 color:black;
 font-weight:600;
-font-size:18px;
-transition:0.35s;
+background:#d4af37;
+transition:0.3s;
 }
 
 .btn:hover{
-transform:scale(1.07);
-box-shadow:0 0 25px rgba(212,175,55,0.8);
+transform:translateY(-3px) scale(1.05);
+box-shadow:0 0 20px rgba(212,175,55,0.7);
 }
 
-/* footer */
-
-footer{
+.footer{
 margin-top:18px;
-font-size:13px;
+font-size:12px;
 opacity:0.7;
 }
 
@@ -138,60 +138,48 @@ opacity:0.7;
 
 <body>
 
-<div class="container">
+<div class="card">
 
 <p class="welcome">WELCOME</p>
 
 <h1>Yash Kumar</h1>
 
 <div class="section">
-
 <h2>Bio</h2>
 
-<div class="card">
-
+<div class="box">
 Dream big.<br>
 Stay humble.<br>
 Focus on the future.<br>
 Building my own journey.<br>
 Trust the process.<br>
 The journey has just begun.
-
 </div>
 
 </div>
 
 <div class="section">
-
 <h2>About</h2>
 
-<div class="card">
-
+<div class="box">
 Just a student exploring life and learning new things every day.<br>
-Focused on growth, dreams and building a better future.<br>
-Every step forward is part of the journey.
-
+Focused on growth and building a better future.
 </div>
 
 </div>
 
 <div class="section">
-
 <h2>Follow Me</h2>
 
-<a class="btn"
-href="https://www.instagram.com/soul_faith.x?igsh=bTVyeXkxYmR3dTZu"
-target="_blank">
-
+<a href="https://www.instagram.com/soul_faith.x?igsh=bTVyeXkxYmR3dTZu" class="btn">
 Follow me on Instagram
-
 </a>
 
 </div>
 
-<footer>
+<p class="footer">
 Build by Yash ✨
-</footer>
+</p>
 
 </div>
 
