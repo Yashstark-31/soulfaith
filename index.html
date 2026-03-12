@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,40 +23,85 @@ justify-content:center;
 align-items:center;
 background:#000;
 color:#d4af37;
-text-align:center;
+overflow:hidden;
 }
 
+/* animated background glow */
+
+body::before{
+content:"";
+position:absolute;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#d4af37,transparent 70%);
+opacity:0.15;
+animation:rotate 18s linear infinite;
+}
+
+@keyframes rotate{
+0%{transform:rotate(0deg)}
+100%{transform:rotate(360deg)}
+}
+
+/* card */
+
 .card{
-width:340px;
-padding:45px;
-border-radius:18px;
-background:#111;
-border:1px solid #d4af37;
-box-shadow:0 0 25px rgba(212,175,55,0.25);
+position:relative;
+width:380px;
+padding:50px;
+border-radius:20px;
+background:rgba(20,20,20,0.85);
+backdrop-filter:blur(15px);
+text-align:center;
+border:1px solid rgba(212,175,55,0.5);
+box-shadow:0 0 30px rgba(212,175,55,0.2);
+}
+
+/* animated border */
+
+.card::before{
+content:"";
+position:absolute;
+top:-2px;
+left:-2px;
+right:-2px;
+bottom:-2px;
+border-radius:20px;
+background:linear-gradient(45deg,#d4af37,transparent,#d4af37);
+z-index:-1;
+animation:borderGlow 6s linear infinite;
+}
+
+@keyframes borderGlow{
+0%{filter:hue-rotate(0deg)}
+100%{filter:hue-rotate(360deg)}
 }
 
 .welcome{
 font-size:13px;
-letter-spacing:3px;
+letter-spacing:4px;
 opacity:0.8;
 margin-bottom:15px;
 }
 
 h1{
-font-size:32px;
-margin-bottom:20px;
+font-size:34px;
+margin-bottom:25px;
+font-weight:600;
 }
 
 .bio{
-line-height:1.8;
+line-height:1.9;
 font-size:15px;
 margin-bottom:35px;
 }
 
+/* instagram button */
+
 .btn{
 display:block;
-padding:14px;
-border-radius:12px;
+padding:15px;
+border-radius:14px;
 text-decoration:none;
 color:black;
 font-weight:600;
@@ -65,14 +110,14 @@ transition:0.3s;
 }
 
 .btn:hover{
-background:#f5d76e;
-transform:scale(1.05);
+transform:translateY(-3px) scale(1.05);
+box-shadow:0 0 20px rgba(212,175,55,0.7);
 }
 
 .footer{
-margin-top:25px;
+margin-top:30px;
 font-size:12px;
-opacity:0.7;
+opacity:0.6;
 }
 
 </style>
