@@ -24,10 +24,10 @@ min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-overflow-x:hidden;
+overflow:hidden;
 }
 
-/* background glow */
+/* RGB glow background */
 
 body::before{
 content:"";
@@ -36,7 +36,7 @@ width:900px;
 height:900px;
 background:radial-gradient(circle,#d4af37,transparent 70%);
 opacity:0.12;
-animation:spin 20s linear infinite;
+animation:spin 18s linear infinite;
 }
 
 @keyframes spin{
@@ -44,18 +44,18 @@ animation:spin 20s linear infinite;
 100%{transform:rotate(360deg)}
 }
 
-/* container */
+/* main card */
 
 .container{
 width:92%;
 max-width:520px;
-padding:50px 30px;
+padding:45px 30px;
 text-align:center;
 background:rgba(20,20,20,0.85);
 border-radius:22px;
 border:1px solid rgba(212,175,55,0.4);
 backdrop-filter:blur(15px);
-box-shadow:0 0 35px rgba(212,175,55,0.2);
+box-shadow:0 0 35px rgba(212,175,55,0.25);
 }
 
 /* welcome */
@@ -64,7 +64,7 @@ box-shadow:0 0 35px rgba(212,175,55,0.2);
 letter-spacing:4px;
 font-size:13px;
 opacity:0.8;
-margin-bottom:12px;
+margin-bottom:10px;
 }
 
 /* name */
@@ -72,16 +72,16 @@ margin-bottom:12px;
 h1{
 font-family:'Playfair Display';
 font-size:46px;
-margin-bottom:25px;
+margin-bottom:22px;
 }
 
 /* section */
 
 .section{
-margin-top:28px;
+margin-top:26px;
 }
 
-/* card */
+/* cards */
 
 .card{
 background:rgba(255,255,255,0.05);
@@ -98,18 +98,18 @@ transform:translateY(-6px);
 box-shadow:0 0 20px rgba(212,175,55,0.4);
 }
 
-/* titles */
+/* section title */
 
 .section h2{
 font-size:20px;
-margin-bottom:14px;
+margin-bottom:12px;
 }
 
 /* instagram button */
 
 .btn{
 display:inline-block;
-margin-top:25px;
+margin-top:22px;
 padding:16px 40px;
 border-radius:16px;
 text-decoration:none;
@@ -128,7 +128,7 @@ box-shadow:0 0 25px rgba(212,175,55,0.8);
 /* footer */
 
 footer{
-margin-top:35px;
+margin-top:18px;
 font-size:13px;
 opacity:0.7;
 }
@@ -190,7 +190,7 @@ Follow me on Instagram
 </div>
 
 <footer>
-Thanks for visiting ✨
+Build by Yash ✨
 </footer>
 
 </div>
