@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Yash Kumar</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
@@ -13,111 +14,102 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Poppins;
 }
 
 body{
-height:100vh;
+font-family:Poppins;
+background:#000;
+color:#d4af37;
 display:flex;
 justify-content:center;
 align-items:center;
-background:#000;
-color:#d4af37;
+min-height:100vh;
+text-align:center;
 overflow:hidden;
 }
 
-/* animated background glow */
+/* background glow */
 
 body::before{
 content:"";
 position:absolute;
-width:600px;
-height:600px;
+width:700px;
+height:700px;
 background:radial-gradient(circle,#d4af37,transparent 70%);
-opacity:0.15;
-animation:rotate 18s linear infinite;
+opacity:0.12;
+animation:spin 18s linear infinite;
 }
 
-@keyframes rotate{
+@keyframes spin{
 0%{transform:rotate(0deg)}
 100%{transform:rotate(360deg)}
 }
 
-/* card */
-
-.card{
+.container{
+width:92%;
+max-width:480px;
 position:relative;
-width:380px;
-padding:50px;
-border-radius:20px;
-background:rgba(20,20,20,0.85);
-backdrop-filter:blur(15px);
-text-align:center;
-border:1px solid rgba(212,175,55,0.5);
-box-shadow:0 0 30px rgba(212,175,55,0.2);
 }
 
-/* animated border */
-
-.card::before{
-content:"";
-position:absolute;
-top:-2px;
-left:-2px;
-right:-2px;
-bottom:-2px;
-border-radius:20px;
-background:linear-gradient(45deg,#d4af37,transparent,#d4af37);
-z-index:-1;
-animation:borderGlow 6s linear infinite;
-}
-
-@keyframes borderGlow{
-0%{filter:hue-rotate(0deg)}
-100%{filter:hue-rotate(360deg)}
-}
-
-.welcome{
-font-size:13px;
-letter-spacing:4px;
-opacity:0.8;
-margin-bottom:15px;
-}
+/* title */
 
 h1{
-font-size:34px;
-margin-bottom:25px;
-font-weight:600;
+font-family:'Playfair Display';
+font-size:46px;
+color:#d4af37;
+margin-bottom:10px;
 }
 
-.bio{
-line-height:1.9;
-font-size:15px;
-margin-bottom:35px;
+.tag{
+font-size:16px;
+letter-spacing:3px;
+margin-bottom:30px;
+opacity:0.8;
+}
+
+/* sections */
+
+.section{
+margin-top:28px;
+}
+
+/* premium card */
+
+.card{
+background:rgba(20,20,20,0.85);
+border:1px solid rgba(212,175,55,0.4);
+padding:24px;
+border-radius:18px;
+font-size:16px;
+line-height:1.8;
+backdrop-filter:blur(10px);
+box-shadow:0 0 20px rgba(212,175,55,0.2);
 }
 
 /* instagram button */
 
 .btn{
-display:block;
-padding:15px;
-border-radius:14px;
+display:inline-block;
+margin-top:25px;
+padding:16px 40px;
+border-radius:16px;
 text-decoration:none;
+background:linear-gradient(45deg,#d4af37,#ffd700);
 color:black;
 font-weight:600;
-background:#d4af37;
-transition:0.3s;
+font-size:18px;
+transition:0.35s;
 }
 
 .btn:hover{
-transform:translateY(-3px) scale(1.05);
-box-shadow:0 0 20px rgba(212,175,55,0.7);
+transform:scale(1.08);
+box-shadow:0 0 25px rgba(212,175,55,0.8);
 }
 
-.footer{
-margin-top:30px;
-font-size:12px;
-opacity:0.6;
+footer{
+margin-top:35px;
+font-size:13px;
+opacity:0.7;
 }
 
 </style>
@@ -125,28 +117,42 @@ opacity:0.6;
 
 <body>
 
-<div class="card">
+<div class="container">
 
-<p class="welcome">WELCOME</p>
+<p class="tag">WELCOME</p>
 
 <h1>Yash Kumar</h1>
 
-<p class="bio">
+<div class="section">
+
+<div class="card">
+
 Dream big.<br>
 Stay humble.<br>
 Focus on the future.<br>
 Building my own journey.<br>
 Trust the process.<br>
 The journey has just begun.
-</p>
 
-<a href="https://www.instagram.com/soul_faith.x?igsh=bTVyeXkxYmR3dTZu" class="btn">
+</div>
+
+</div>
+
+<div class="section">
+
+<a class="btn"
+href="https://www.instagram.com/soul_faith.x?igsh=bTVyeXkxYmR3dTZu"
+target="_blank">
+
 Follow me on Instagram
+
 </a>
 
-<p class="footer">
+</div>
+
+<footer>
 Thanks for visiting ✨
-</p>
+</footer>
 
 </div>
 
