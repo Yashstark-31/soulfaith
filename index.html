@@ -3,184 +3,204 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yash Kumar</title>
+<title>YASH - PORTFOLIO</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-body{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:#000;
-color:#d4af37;
-overflow:hidden;
+body,html{
+  height:100%;
+  font-family:'Poppins',sans-serif;
+  color:#fff;
+  overflow:hidden;
 }
 
-/* animated background glow */
-
-body::before{
-content:"";
-position:absolute;
-width:600px;
-height:600px;
-background:radial-gradient(circle,#d4af37,transparent 70%);
-opacity:0.15;
-animation:rotate 18s linear infinite;
+/* 🎥 Background Video */
+video{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-2;
 }
 
-@keyframes rotate{
-0%{transform:rotate(0deg)}
-100%{transform:rotate(360deg)}
+/* 🌑 Overlay */
+.overlay{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.65);
+  z-index:-1;
 }
 
-/* card */
+/* 📦 Container */
+.container{
+  height:100%;
+  overflow-y:auto;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding:60px 20px;
+}
 
+/* 💎 Card */
 .card{
-position:relative;
-width:380px;
-padding:40px;
-border-radius:20px;
-background:rgba(20,20,20,0.85);
-backdrop-filter:blur(15px);
-text-align:center;
-border:1px solid rgba(212,175,55,0.5);
-box-shadow:0 0 30px rgba(212,175,55,0.2);
+  max-width:850px;
+  width:100%;
+  background:rgba(255,255,255,0.08);
+  border-radius:25px;
+  padding:40px;
+  backdrop-filter:blur(15px);
+  border:1px solid rgba(255,255,255,0.2);
+  text-align:center;
+  animation:fadeIn 1.2s ease;
 }
 
-/* animated border */
-
-.card::before{
-content:"";
-position:absolute;
-top:-2px;
-left:-2px;
-right:-2px;
-bottom:-2px;
-border-radius:20px;
-background:linear-gradient(45deg,#d4af37,transparent,#d4af37);
-z-index:-1;
-animation:borderGlow 6s linear infinite;
+/* ✨ Animation */
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
 }
 
-@keyframes borderGlow{
-0%{filter:hue-rotate(0deg)}
-100%{filter:hue-rotate(360deg)}
+/* 🧑 Profile */
+.profile{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  border:3px solid #fff;
+  object-fit:cover;
+  margin-bottom:20px;
 }
 
-.welcome{
-font-size:13px;
-letter-spacing:4px;
-opacity:0.8;
-margin-bottom:15px;
-}
-
+/* 🔥 Name */
 h1{
-font-size:34px;
-margin-bottom:20px;
-font-weight:600;
+  font-size:2.8em;
+  margin-bottom:10px;
 }
 
+/* 💬 Text */
+p{
+  font-size:1.1em;
+  line-height:1.6;
+  color:#ddd;
+}
+
+/* 📋 Sections */
 .section{
-margin-top:20px;
+  margin-top:30px;
+  text-align:left;
 }
 
 .section h2{
-font-size:18px;
-margin-bottom:10px;
+  margin-bottom:10px;
+  border-bottom:1px solid #fff;
+  padding-bottom:5px;
 }
 
-.box{
-line-height:1.8;
-font-size:14px;
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(212,175,55,0.3);
-padding:16px;
-border-radius:12px;
+.section ul{
+  list-style:none;
+  line-height:1.9;
 }
 
-/* instagram button */
+.section ul li::before{
+  content:"› ";
+  color:#00c6ff;
+}
 
+/* 🔘 Button */
 .btn{
-display:block;
-margin-top:20px;
-padding:14px;
-border-radius:14px;
-text-decoration:none;
-color:black;
-font-weight:600;
-background:#d4af37;
-transition:0.3s;
+  display:inline-block;
+  margin-top:30px;
+  padding:14px 30px;
+  border-radius:50px;
+  text-decoration:none;
+  color:#fff;
+  background:linear-gradient(135deg,#00c6ff,#0072ff);
+  transition:0.3s;
+  box-shadow:0 0 15px #00c6ff;
 }
 
 .btn:hover{
-transform:translateY(-3px) scale(1.05);
-box-shadow:0 0 20px rgba(212,175,55,0.7);
+  transform:scale(1.08);
+  box-shadow:0 0 25px #00c6ff;
 }
 
-.footer{
-margin-top:18px;
-font-size:12px;
-opacity:0.7;
+/* 📌 Footer */
+footer{
+  margin-top:40px;
+  font-size:0.9em;
+  color:#aaa;
 }
-
 </style>
 </head>
 
 <body>
 
-<div class="card">
+<!-- 🎥 Video -->
+<video autoplay muted loop>
+  <source src="bg.mp4" type="video/mp4">
+</video>
 
-<p class="welcome">WELCOME</p>
+<div class="overlay"></div>
 
-<h1>Yash Kumar</h1>
+<div class="container">
+  <div class="card">
 
-<div class="section">
-<h2>Bio</h2>
+    <!-- 🧑 Image -->
+    <img src="file.png" class="profile">
 
-<div class="box">
-Dream big.<br>
-Stay humble.<br>
-Focus on the future.<br>
-Building my own journey.<br>
-Trust the process.<br>
-The journey has just begun.
-</div>
+    <!-- 🔥 Name -->
+    <h1>YASH</h1>
 
-</div>
+    <!-- 💬 Intro -->
+    <p>
+      Hi! I'm Yash — 16 years old school student from India 🇮🇳 <br>
+      Living where I belong, dreaming big and growing every day.
+    </p>
 
-<div class="section">
-<h2>About</h2>
+    <!-- 📋 About -->
+    <div class="section">
+      <h2>About Me</h2>
+      <ul>
+        <li><strong>Country:</strong> India</li>
+        <li><strong>Age:</strong> 16</li>
+        <li><strong>Class:</strong> School Student</li>
+        <li><strong>Hobbies:</strong> Learning, exploring, self growth</li>
+      </ul>
+    </div>
 
-<div class="box">
-Just a student exploring life and learning new things every day.<br>
-Focused on growth and building a better future.
-</div>
+    <!-- 🧠 Skills -->
+    <div class="section">
+      <h2>Skills</h2>
+      <ul>
+        <li>Creative Thinking</li>
+        <li>Communication</li>
+        <li>Problem Solving</li>
+        <li>Learning & Exploring</li>
+        <li>Self Improvement</li>
+      </ul>
+    </div>
 
-</div>
+    <!-- 🔗 Button -->
+    <a href="https://t.me/YAsHSTARK_18" target="_blank" class="btn">
+      Contact Me on Telegram
+    </a>
 
-<div class="section">
-<h2>Follow Me</h2>
+    <!-- 📌 Footer -->
+    <footer>
+      © 2026 Yash. All rights reserved. <br>
+      Built by Yash ⚡
+    </footer>
 
-<a href="https://www.instagram.com/soul_faith.x?igsh=bTVyeXkxYmR3dTZu" class="btn">
-Follow me on Instagram
-</a>
-
-</div>
-
-<p class="footer">
-Build by Yash ✨
-</p>
-
+  </div>
 </div>
 
 </body>
