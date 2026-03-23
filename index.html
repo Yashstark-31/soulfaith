@@ -8,11 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 
 body,html{
   height:100%;
@@ -21,6 +17,7 @@ body,html{
   overflow:hidden;
 }
 
+/* VIDEO */
 video{
   position:fixed;
   top:0;
@@ -31,6 +28,7 @@ video{
   z-index:-2;
 }
 
+/* OVERLAY */
 .overlay{
   position:fixed;
   width:100%;
@@ -39,6 +37,7 @@ video{
   z-index:-1;
 }
 
+/* MAIN */
 .container{
   height:100%;
   overflow-y:auto;
@@ -48,6 +47,7 @@ video{
   padding:60px 20px;
 }
 
+/* CARD */
 .card{
   max-width:850px;
   width:100%;
@@ -65,6 +65,7 @@ video{
   to{opacity:1; transform:translateY(0);}
 }
 
+/* PROFILE */
 .profile{
   width:150px;
   height:150px;
@@ -74,10 +75,7 @@ video{
   margin-bottom:20px;
 }
 
-h1{
-  font-size:2.8em;
-  margin-bottom:10px;
-}
+h1{font-size:2.8em;margin-bottom:10px}
 
 p{
   font-size:1.1em;
@@ -85,6 +83,7 @@ p{
   color:#ddd;
 }
 
+/* SECTION */
 .section{
   margin-top:30px;
   text-align:left;
@@ -106,6 +105,7 @@ p{
   color:#00c6ff;
 }
 
+/* BUTTON */
 .btn{
   display:inline-block;
   margin-top:20px;
@@ -128,6 +128,7 @@ p{
   box-shadow:0 0 15px #ff00cc;
 }
 
+/* MUSIC BOX (UI only) */
 .music-box{
   margin-top:30px;
   padding:20px;
@@ -136,7 +137,6 @@ p{
   backdrop-filter:blur(10px);
 }
 
-/* 🎵 Cover Image */
 .song-cover{
   width:120px;
   height:120px;
@@ -145,7 +145,7 @@ p{
   margin-bottom:10px;
 }
 
-/* 🌊 Wave */
+/* WAVE */
 .wave{
   display:flex;
   justify-content:center;
@@ -173,12 +173,10 @@ p{
   50%{height:55px;opacity:1;}
 }
 
-/* 🎧 Text */
 .vibe-text{
   margin-top:10px;
   font-size:13px;
   color:#aaa;
-  letter-spacing:1px;
 }
 
 footer{
@@ -191,15 +189,12 @@ footer{
 
 <body>
 
-<video autoplay muted loop>
-  <source src="bg.mp4">
+<!-- 🎥 VIDEO WITH SOUND -->
+<video id="bgVideo" autoplay loop playsinline>
+  <source src="bg.mp4" type="video/mp4">
 </video>
 
 <div class="overlay"></div>
-
-<audio autoplay loop>
-  <source src="song.mp3">
-</audio>
 
 <div class="container">
   <div class="card">
@@ -223,19 +218,14 @@ footer{
       </ul>
     </div>
 
-    <!-- 🎧 MUSIC -->
+    <!-- UI only -->
     <div class="music-box">
-
       <img src="cover.jpg" class="song-cover">
-
       🎧 Now Playing
-
       <div class="wave">
         <span></span><span></span><span></span><span></span><span></span>
       </div>
-
       <p class="vibe-text">Listen full vibe</p>
-
     </div>
 
     <div class="section">
@@ -255,7 +245,7 @@ footer{
 
     <br>
 
-    <a href="https://www.instagram.com/soul_faith.x?igsh=NXFlYjAyYTd4cnZh" target="_blank" class="btn insta">
+    <a href="https://www.instagram.com/soul_faith.x" target="_blank" class="btn insta">
       Follow Me on Instagram
     </a>
 
@@ -266,6 +256,23 @@ footer{
 
   </div>
 </div>
+
+<!-- 🔥 AUTOPLAY FIX -->
+<script>
+const video = document.getElementById("bgVideo");
+
+window.onload = () => {
+  video.play().catch(()=>{});
+};
+
+document.addEventListener("click", () => {
+  video.play();
+}, { once:true });
+
+document.addEventListener("touchstart", () => {
+  video.play();
+}, { once:true });
+</script>
 
 </body>
 </html>
