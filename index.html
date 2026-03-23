@@ -128,7 +128,7 @@ p{
   box-shadow:0 0 15px #ff00cc;
 }
 
-/* MUSIC BOX (UI only) */
+/* MUSIC UI */
 .music-box{
   margin-top:30px;
   padding:20px;
@@ -261,10 +261,12 @@ footer{
 <script>
 const video = document.getElementById("bgVideo");
 
+// try autoplay
 window.onload = () => {
   video.play().catch(()=>{});
 };
 
+// force play on user interaction
 document.addEventListener("click", () => {
   video.play();
 }, { once:true });
