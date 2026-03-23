@@ -136,7 +136,6 @@ p{
   backdrop-filter:blur(10px);
 }
 
-/* 🎵 Cover Image */
 .song-cover{
   width:120px;
   height:120px;
@@ -145,7 +144,6 @@ p{
   margin-bottom:10px;
 }
 
-/* 🌊 Wave */
 .wave{
   display:flex;
   justify-content:center;
@@ -173,7 +171,6 @@ p{
   50%{height:55px;opacity:1;}
 }
 
-/* 🎧 Text */
 .vibe-text{
   margin-top:10px;
   font-size:13px;
@@ -191,15 +188,12 @@ footer{
 
 <body>
 
-<video autoplay muted loop>
+<!-- 🎥 Background Video (UNMUTED) -->
+<video autoplay loop>
   <source src="bg.mp4">
 </video>
 
 <div class="overlay"></div>
-
-<audio autoplay loop>
-  <source src="song.mp3">
-</audio>
 
 <div class="container">
   <div class="card">
@@ -223,7 +217,7 @@ footer{
       </ul>
     </div>
 
-    <!-- 🎧 MUSIC -->
+    <!-- 🎧 MUSIC UI (visual only, no audio now) -->
     <div class="music-box">
 
       <img src="cover.jpg" class="song-cover">
