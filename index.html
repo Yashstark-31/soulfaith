@@ -21,7 +21,6 @@ body,html{
   overflow:hidden;
 }
 
-/* 🎥 Background Video */
 video{
   position:fixed;
   top:0;
@@ -32,7 +31,6 @@ video{
   z-index:-2;
 }
 
-/* 🌑 Overlay */
 .overlay{
   position:fixed;
   width:100%;
@@ -41,7 +39,6 @@ video{
   z-index:-1;
 }
 
-/* 📦 Container */
 .container{
   height:100%;
   overflow-y:auto;
@@ -51,7 +48,6 @@ video{
   padding:60px 20px;
 }
 
-/* 💎 Card */
 .card{
   max-width:850px;
   width:100%;
@@ -64,13 +60,11 @@ video{
   animation:fadeIn 1.2s ease;
 }
 
-/* ✨ Animation */
 @keyframes fadeIn{
   from{opacity:0; transform:translateY(40px);}
   to{opacity:1; transform:translateY(0);}
 }
 
-/* 🧑 Profile */
 .profile{
   width:150px;
   height:150px;
@@ -80,20 +74,17 @@ video{
   margin-bottom:20px;
 }
 
-/* 🔥 Name */
 h1{
   font-size:2.8em;
   margin-bottom:10px;
 }
 
-/* 💬 Text */
 p{
   font-size:1.1em;
   line-height:1.6;
   color:#ddd;
 }
 
-/* 📋 Sections */
 .section{
   margin-top:30px;
   text-align:left;
@@ -115,10 +106,9 @@ p{
   color:#00c6ff;
 }
 
-/* 🔘 Button */
 .btn{
   display:inline-block;
-  margin-top:30px;
+  margin-top:20px;
   padding:14px 30px;
   border-radius:50px;
   text-decoration:none;
@@ -133,7 +123,64 @@ p{
   box-shadow:0 0 25px #00c6ff;
 }
 
-/* 📌 Footer */
+.insta{
+  background:linear-gradient(135deg,#ff00cc,#3333ff);
+  box-shadow:0 0 15px #ff00cc;
+}
+
+.music-box{
+  margin-top:30px;
+  padding:20px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+}
+
+/* 🎵 Cover Image */
+.song-cover{
+  width:120px;
+  height:120px;
+  border-radius:15px;
+  object-fit:cover;
+  margin-bottom:10px;
+}
+
+/* 🌊 Wave */
+.wave{
+  display:flex;
+  justify-content:center;
+  align-items:end;
+  gap:6px;
+  height:60px;
+  margin-top:10px;
+}
+
+.wave span{
+  width:6px;
+  height:20px;
+  border-radius:10px;
+  background:linear-gradient(180deg,#00c6ff,#0072ff);
+  animation:waveAnim 1s infinite ease-in-out;
+}
+
+.wave span:nth-child(2){animation-delay:0.1s;}
+.wave span:nth-child(3){animation-delay:0.2s;}
+.wave span:nth-child(4){animation-delay:0.3s;}
+.wave span:nth-child(5){animation-delay:0.4s;}
+
+@keyframes waveAnim{
+  0%,100%{height:15px;opacity:0.6;}
+  50%{height:55px;opacity:1;}
+}
+
+/* 🎧 Text */
+.vibe-text{
+  margin-top:10px;
+  font-size:13px;
+  color:#aaa;
+  letter-spacing:1px;
+}
+
 footer{
   margin-top:40px;
   font-size:0.9em;
@@ -144,29 +191,28 @@ footer{
 
 <body>
 
-<!-- 🎥 Video -->
 <video autoplay muted loop>
-  <source src="bg.mp4" type="video/mp4">
+  <source src="bg.mp4">
 </video>
 
 <div class="overlay"></div>
 
+<audio autoplay loop>
+  <source src="song.mp3">
+</audio>
+
 <div class="container">
   <div class="card">
 
-    <!-- 🧑 Image -->
     <img src="file.png" class="profile">
 
-    <!-- 🔥 Name -->
     <h1>YASH</h1>
 
-    <!-- 💬 Intro -->
     <p>
       Hi! I'm Yash — 16 years old school student from India 🇮🇳 <br>
       Living where I belong, dreaming big and growing every day.
     </p>
 
-    <!-- 📋 About -->
     <div class="section">
       <h2>About Me</h2>
       <ul>
@@ -177,7 +223,21 @@ footer{
       </ul>
     </div>
 
-    <!-- 🧠 Skills -->
+    <!-- 🎧 MUSIC -->
+    <div class="music-box">
+
+      <img src="cover.jpg" class="song-cover">
+
+      🎧 Now Playing
+
+      <div class="wave">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <p class="vibe-text">Listen full vibe</p>
+
+    </div>
+
     <div class="section">
       <h2>Skills</h2>
       <ul>
@@ -189,12 +249,16 @@ footer{
       </ul>
     </div>
 
-    <!-- 🔗 Button -->
     <a href="https://t.me/YAsHSTARK_18" target="_blank" class="btn">
       Contact Me on Telegram
     </a>
 
-    <!-- 📌 Footer -->
+    <br>
+
+    <a href="https://www.instagram.com/soul_faith.x?igsh=NXFlYjAyYTd4cnZh" target="_blank" class="btn insta">
+      Follow Me on Instagram
+    </a>
+
     <footer>
       © 2026 Yash. All rights reserved. <br>
       Built by Yash ⚡
