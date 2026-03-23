@@ -8,7 +8,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
 body,html{
   height:100%;
@@ -17,9 +21,10 @@ body,html{
   overflow:hidden;
 }
 
-/* 🎥 Background */
 video{
   position:fixed;
+  top:0;
+  left:0;
   width:100%;
   height:100%;
   object-fit:cover;
@@ -39,6 +44,7 @@ video{
   overflow-y:auto;
   display:flex;
   justify-content:center;
+  align-items:flex-start;
   padding:60px 20px;
 }
 
@@ -51,9 +57,14 @@ video{
   backdrop-filter:blur(15px);
   border:1px solid rgba(255,255,255,0.2);
   text-align:center;
+  animation:fadeIn 1.2s ease;
 }
 
-/* PROFILE */
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
 .profile{
   width:150px;
   height:150px;
@@ -63,83 +74,116 @@ video{
   margin-bottom:20px;
 }
 
-h1{font-size:2.8em;margin-bottom:10px;}
-p{color:#ddd;}
+h1{
+  font-size:2.8em;
+  margin-bottom:10px;
+}
 
-/* SECTION */
+p{
+  font-size:1.1em;
+  line-height:1.6;
+  color:#ddd;
+}
+
 .section{
   margin-top:30px;
   text-align:left;
 }
 
 .section h2{
-  border-bottom:1px solid #fff;
   margin-bottom:10px;
+  border-bottom:1px solid #fff;
+  padding-bottom:5px;
 }
 
 .section ul{
   list-style:none;
+  line-height:1.9;
 }
 
-.section li::before{
+.section ul li::before{
   content:"› ";
   color:#00c6ff;
 }
 
-/* BUTTON */
 .btn{
   display:inline-block;
-  margin-top:30px;
+  margin-top:20px;
   padding:14px 30px;
   border-radius:50px;
-  background:linear-gradient(135deg,#00c6ff,#0072ff);
-  color:#fff;
   text-decoration:none;
+  color:#fff;
+  background:linear-gradient(135deg,#00c6ff,#0072ff);
+  transition:0.3s;
+  box-shadow:0 0 15px #00c6ff;
+}
+
+.btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 25px #00c6ff;
 }
 
 .insta{
   background:linear-gradient(135deg,#ff00cc,#3333ff);
+  box-shadow:0 0 15px #ff00cc;
 }
 
-/* 🎧 MUSIC */
 .music-box{
   margin-top:30px;
-  text-align:center;
+  padding:20px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
 }
 
-/* 🖼 COVER */
+/* 🎵 Cover Image */
 .song-cover{
   width:120px;
   height:120px;
   border-radius:15px;
+  object-fit:cover;
   margin-bottom:10px;
 }
 
-/* 🌊 OLD STYLE WAVE */
+/* 🌊 Wave */
 .wave{
   display:flex;
   justify-content:center;
-  gap:5px;
+  align-items:end;
+  gap:6px;
+  height:60px;
+  margin-top:10px;
 }
 
 .wave span{
-  width:5px;
-  height:15px;
-  background:#00c6ff;
-  animation:wave 1s infinite ease-in-out;
+  width:6px;
+  height:20px;
+  border-radius:10px;
+  background:linear-gradient(180deg,#00c6ff,#0072ff);
+  animation:waveAnim 1s infinite ease-in-out;
 }
 
-.wave span:nth-child(2){animation-delay:0.2s;}
-.wave span:nth-child(3){animation-delay:0.4s;}
-.wave span:nth-child(4){animation-delay:0.6s;}
+.wave span:nth-child(2){animation-delay:0.1s;}
+.wave span:nth-child(3){animation-delay:0.2s;}
+.wave span:nth-child(4){animation-delay:0.3s;}
+.wave span:nth-child(5){animation-delay:0.4s;}
 
-@keyframes wave{
-  0%,100%{height:10px;}
-  50%{height:30px;}
+@keyframes waveAnim{
+  0%,100%{height:15px;opacity:0.6;}
+  50%{height:55px;opacity:1;}
+}
+
+/* 🎧 Text */
+.vibe-text{
+  margin-top:10px;
+  font-size:13px;
+  color:#aaa;
+  letter-spacing:1px;
 }
 
 footer{
   margin-top:40px;
+  font-size:0.9em;
   color:#aaa;
 }
 </style>
@@ -153,90 +197,75 @@ footer{
 
 <div class="overlay"></div>
 
-<!-- 🎵 AUDIO -->
-<audio id="bgMusic" preload="auto" loop>
+<audio autoplay loop>
   <source src="song.mp3">
 </audio>
 
 <div class="container">
-<div class="card">
+  <div class="card">
 
-<img src="file.png" class="profile">
+    <img src="file.png" class="profile">
 
-<h1>YASH</h1>
+    <h1>YASH</h1>
 
-<p>
-Hi! I'm Yash — 16 years old school student from India 🇮🇳
-</p>
+    <p>
+      Hi! I'm Yash — 16 years old school student from India 🇮🇳 <br>
+      Living where I belong, dreaming big and growing every day.
+    </p>
 
-<div class="section">
-<h2>About Me</h2>
-<ul>
-<li>Country: India</li>
-<li>Age: 16</li>
-<li>Student</li>
-<li>Learning & exploring</li>
-</ul>
+    <div class="section">
+      <h2>About Me</h2>
+      <ul>
+        <li><strong>Country:</strong> India</li>
+        <li><strong>Age:</strong> 16</li>
+        <li><strong>Class:</strong> School Student</li>
+        <li><strong>Hobbies:</strong> Learning, exploring, self growth</li>
+      </ul>
+    </div>
+
+    <!-- 🎧 MUSIC -->
+    <div class="music-box">
+
+      <img src="cover.jpg" class="song-cover">
+
+      🎧 Now Playing
+
+      <div class="wave">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <p class="vibe-text">Listen full vibe</p>
+
+    </div>
+
+    <div class="section">
+      <h2>Skills</h2>
+      <ul>
+        <li>Creative Thinking</li>
+        <li>Communication</li>
+        <li>Problem Solving</li>
+        <li>Learning & Exploring</li>
+        <li>Self Improvement</li>
+      </ul>
+    </div>
+
+    <a href="https://t.me/YAsHSTARK_18" target="_blank" class="btn">
+      Contact Me on Telegram
+    </a>
+
+    <br>
+
+    <a href="https://www.instagram.com/soul_faith.x?igsh=NXFlYjAyYTd4cnZh" target="_blank" class="btn insta">
+      Follow Me on Instagram
+    </a>
+
+    <footer>
+      © 2026 Yash. All rights reserved. <br>
+      Built by Yash ⚡
+    </footer>
+
+  </div>
 </div>
-
-<!-- 🎧 MUSIC -->
-<div class="music-box">
-
-<img src="cover.jpg" class="song-cover">
-
-🎧 Now Playing
-
-<div class="wave">
-<span></span><span></span><span></span><span></span>
-</div>
-
-<p style="color:#aaa;">Listen full vibe</p>
-
-</div>
-
-<div class="section">
-<h2>Skills</h2>
-<ul>
-<li>Creative Thinking</li>
-<li>Communication</li>
-<li>Problem Solving</li>
-<li>Self Growth</li>
-</ul>
-</div>
-
-<a href="https://t.me/YAsHSTARK_18" class="btn">Contact Me</a>
-<br>
-<a href="https://www.instagram.com/soul_faith.x" class="btn insta">Follow Me on Instagram</a>
-
-<footer>
-© 2026 Yash <br>
-Built by Yash ⚡
-</footer>
-
-</div>
-</div>
-
-<script>
-// 🔥 EXTREME FAST START
-const audio = document.getElementById("bgMusic");
-
-// preload trick
-audio.load();
-
-// instant try
-audio.play().catch(()=>{
-
-  // fallback ultra fast
-  const start = () => {
-    audio.play();
-    document.removeEventListener("touchstart", start);
-    document.removeEventListener("click", start);
-  };
-
-  document.addEventListener("touchstart", start);
-  document.addEventListener("click", start);
-});
-</script>
 
 </body>
 </html>
