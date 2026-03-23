@@ -17,31 +17,34 @@ body,html{
   overflow:hidden;
 }
 
-/* 🎥 Background */
+/* 🎥 Background Video */
 video{
   position:fixed;
-  width:100%;
-  height:100%;
+  top:0;left:0;
+  width:100%;height:100%;
   object-fit:cover;
   z-index:-2;
 }
 
+/* 🌑 Overlay */
 .overlay{
   position:fixed;
-  width:100%;
-  height:100%;
+  width:100%;height:100%;
   background:rgba(0,0,0,0.65);
   z-index:-1;
 }
 
+/* 📦 Container */
 .container{
   height:100%;
   overflow-y:auto;
   display:flex;
   justify-content:center;
+  align-items:flex-start;
   padding:60px 20px;
 }
 
+/* 💎 Card */
 .card{
   max-width:850px;
   width:100%;
@@ -51,9 +54,15 @@ video{
   backdrop-filter:blur(15px);
   border:1px solid rgba(255,255,255,0.2);
   text-align:center;
+  animation:fadeIn 1.2s ease;
 }
 
-/* Profile */
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* 🧑 Profile */
 .profile{
   width:150px;
   height:150px;
@@ -63,83 +72,97 @@ video{
   margin-bottom:20px;
 }
 
-h1{font-size:2.8em;margin-bottom:10px;}
-p{color:#ddd;}
+/* 🔥 Name */
+h1{
+  font-size:2.8em;
+  margin-bottom:10px;
+}
 
-/* Sections */
-.section{margin-top:30px;text-align:left;}
-.section h2{border-bottom:1px solid #fff;margin-bottom:10px;}
-.section ul{list-style:none;}
-.section li{margin-bottom:6px;}
-.section li::before{content:"› ";color:#00c6ff;}
+/* 💬 Text */
+p{
+  font-size:1.1em;
+  line-height:1.6;
+  color:#ddd;
+}
 
-/* Buttons */
+/* 📋 Sections */
+.section{
+  margin-top:30px;
+  text-align:left;
+}
+
+.section h2{
+  margin-bottom:10px;
+  border-bottom:1px solid #fff;
+  padding-bottom:5px;
+}
+
+.section ul{
+  list-style:none;
+  line-height:1.9;
+}
+
+.section ul li::before{
+  content:"› ";
+  color:#00c6ff;
+}
+
+/* 🔘 Button */
 .btn{
   display:inline-block;
-  margin-top:20px;
+  margin-top:30px;
   padding:14px 30px;
   border-radius:50px;
   text-decoration:none;
   color:#fff;
   background:linear-gradient(135deg,#00c6ff,#0072ff);
+  transition:0.3s;
+  box-shadow:0 0 15px #00c6ff;
 }
 
+.btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 25px #00c6ff;
+}
+
+/* 📸 Insta */
 .insta{
   background:linear-gradient(135deg,#ff00cc,#3333ff);
 }
 
-/* 🎧 Music Box */
+/* 🎧 MUSIC BOX (simple, no design change) */
 .music-box{
   margin-top:30px;
-  padding:20px;
-  border-radius:20px;
-  background:rgba(255,255,255,0.05);
-}
-
-/* Cover */
-.song-cover{
-  width:120px;
-  height:120px;
-  border-radius:15px;
-  margin-bottom:10px;
+  text-align:center;
 }
 
 /* 🌊 Wave */
 .wave{
   display:flex;
   justify-content:center;
-  align-items:end;
-  gap:6px;
-  height:60px;
+  gap:5px;
+  margin-top:10px;
 }
 
 .wave span{
-  width:6px;
-  height:20px;
-  border-radius:10px;
-  background:linear-gradient(#00c6ff,#0072ff);
+  width:5px;
+  height:15px;
+  background:#00c6ff;
   animation:wave 1s infinite ease-in-out;
 }
 
-.wave span:nth-child(2){animation-delay:.1s;}
-.wave span:nth-child(3){animation-delay:.2s;}
-.wave span:nth-child(4){animation-delay:.3s;}
-.wave span:nth-child(5){animation-delay:.4s;}
+.wave span:nth-child(2){animation-delay:0.2s;}
+.wave span:nth-child(3){animation-delay:0.4s;}
+.wave span:nth-child(4){animation-delay:0.6s;}
 
 @keyframes wave{
-  0%,100%{height:15px;}
-  50%{height:55px;}
+  0%,100%{height:10px;}
+  50%{height:30px;}
 }
 
-.vibe{
-  margin-top:10px;
-  font-size:13px;
-  color:#aaa;
-}
-
-/* Footer */
 footer{
   margin-top:40px;
+  font-size:0.9em;
   color:#aaa;
 }
 </style>
@@ -154,74 +177,76 @@ footer{
 <div class="overlay"></div>
 
 <!-- 🎵 AUDIO -->
-<audio id="bgMusic" preload="auto" loop>
+<audio id="bgMusic" loop>
   <source src="song.mp3">
 </audio>
 
 <div class="container">
-<div class="card">
+  <div class="card">
 
-<img src="file.png" class="profile">
+    <img src="file.png" class="profile">
 
-<h1>YASH</h1>
+    <h1>YASH</h1>
 
-<p>Hi! I'm Yash — 16 years old student from India 🇮🇳</p>
+    <p>
+      Hi! I'm Yash — 16 years old school student from India 🇮🇳 <br>
+      Living where I belong, dreaming big and growing every day.
+    </p>
 
-<div class="section">
-<h2>About Me</h2>
-<ul>
-<li>Country: India</li>
-<li>Age: 16</li>
-<li>Student</li>
-<li>Learning & exploring</li>
-</ul>
-</div>
+    <div class="section">
+      <h2>About Me</h2>
+      <ul>
+        <li><strong>Country:</strong> India</li>
+        <li><strong>Age:</strong> 16</li>
+        <li><strong>Class:</strong> School Student</li>
+        <li><strong>Hobbies:</strong> Learning, exploring, self growth</li>
+      </ul>
+    </div>
 
-<!-- 🎧 MUSIC -->
-<div class="music-box">
+    <!-- 🎧 MUSIC -->
+    <div class="music-box">
+      🎧 Now Playing
+      <div class="wave">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <p style="margin-top:5px;color:#aaa;">Listen full vibe</p>
+    </div>
 
-<img src="cover.jpg" class="song-cover">
+    <div class="section">
+      <h2>Skills</h2>
+      <ul>
+        <li>Creative Thinking</li>
+        <li>Communication</li>
+        <li>Problem Solving</li>
+        <li>Learning & Exploring</li>
+        <li>Self Improvement</li>
+      </ul>
+    </div>
 
-🎧 Now Playing
+    <a href="https://t.me/YAsHSTARK_18" target="_blank" class="btn">
+      Contact Me on Telegram
+    </a>
 
-<div class="wave">
-<span></span><span></span><span></span><span></span><span></span>
-</div>
+    <br>
 
-<p class="vibe">Listen full vibe</p>
+    <a href="https://www.instagram.com/soul_faith.x?igsh=NXFlYjAyYTd4cnZh" target="_blank" class="btn insta">
+      Follow Me on Instagram
+    </a>
 
-</div>
+    <footer>
+      © 2026 Yash. All rights reserved. <br>
+      Built by Yash ⚡
+    </footer>
 
-<div class="section">
-<h2>Skills</h2>
-<ul>
-<li>Creative Thinking</li>
-<li>Communication</li>
-<li>Problem Solving</li>
-<li>Self Growth</li>
-</ul>
-</div>
-
-<a href="https://t.me/YAsHSTARK_18" class="btn">Contact Me</a>
-<br>
-<a href="https://www.instagram.com/soul_faith.x?igsh=NXFlYjAyYTd4cnZh" class="btn insta">Follow Me on Instagram</a>
-
-<footer>
-© 2026 Yash <br>
-Built by Yash ⚡
-</footer>
-
-</div>
+  </div>
 </div>
 
 <script>
+// fast start attempt
 const audio = document.getElementById("bgMusic");
 
-// fast autoplay fix
-window.addEventListener("load",()=>{
-  audio.play().catch(()=>{
-    document.addEventListener("click",()=>audio.play(),{once:true});
-  });
+audio.play().catch(()=>{
+  document.addEventListener("click",()=>audio.play(),{once:true});
 });
 </script>
 
