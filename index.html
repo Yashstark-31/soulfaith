@@ -8,11 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body,html{
   height:100%;
@@ -21,33 +17,33 @@ body,html{
   overflow:hidden;
 }
 
+/* 🎥 Video */
 video{
   position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
+  top:0;left:0;
+  width:100%;height:100%;
   object-fit:cover;
   z-index:-2;
 }
 
+/* Overlay */
 .overlay{
   position:fixed;
-  width:100%;
-  height:100%;
+  width:100%;height:100%;
   background:rgba(0,0,0,0.65);
   z-index:-1;
 }
 
+/* Container */
 .container{
   height:100%;
   overflow-y:auto;
   display:flex;
   justify-content:center;
-  align-items:flex-start;
   padding:60px 20px;
 }
 
+/* Card */
 .card{
   max-width:850px;
   width:100%;
@@ -61,51 +57,33 @@ video{
 }
 
 @keyframes fadeIn{
-  from{opacity:0; transform:translateY(40px);}
-  to{opacity:1; transform:translateY(0);}
+  from{opacity:0;transform:translateY(40px);}
+  to{opacity:1;transform:translateY(0);}
 }
 
+/* Profile */
 .profile{
-  width:150px;
-  height:150px;
+  width:150px;height:150px;
   border-radius:50%;
   border:3px solid #fff;
   object-fit:cover;
   margin-bottom:20px;
 }
 
-h1{
-  font-size:2.8em;
-  margin-bottom:10px;
-}
+/* Text */
+h1{font-size:2.8em;margin-bottom:10px;}
+p{font-size:1.1em;color:#ddd;line-height:1.6;}
 
-p{
-  font-size:1.1em;
-  line-height:1.6;
-  color:#ddd;
-}
-
-.section{
-  margin-top:30px;
-  text-align:left;
-}
-
+.section{margin-top:30px;text-align:left;}
 .section h2{
   margin-bottom:10px;
   border-bottom:1px solid #fff;
   padding-bottom:5px;
 }
+.section ul{list-style:none;line-height:1.9;}
+.section ul li::before{content:"› ";color:#00c6ff;}
 
-.section ul{
-  list-style:none;
-  line-height:1.9;
-}
-
-.section ul li::before{
-  content:"› ";
-  color:#00c6ff;
-}
-
+/* Buttons */
 .btn{
   display:inline-block;
   margin-top:20px;
@@ -117,7 +95,6 @@ p{
   transition:0.3s;
   box-shadow:0 0 15px #00c6ff;
 }
-
 .btn:hover{
   transform:scale(1.08);
   box-shadow:0 0 25px #00c6ff;
@@ -128,22 +105,21 @@ p{
   box-shadow:0 0 15px #ff00cc;
 }
 
+/* Music UI */
 .music-box{
   margin-top:30px;
   padding:20px;
   border-radius:20px;
   background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(10px);
 }
 
 .song-cover{
-  width:120px;
-  height:120px;
+  width:120px;height:120px;
   border-radius:15px;
   object-fit:cover;
-  margin-bottom:10px;
 }
 
+/* Wave */
 .wave{
   display:flex;
   justify-content:center;
@@ -158,24 +134,23 @@ p{
   height:20px;
   border-radius:10px;
   background:linear-gradient(180deg,#00c6ff,#0072ff);
-  animation:waveAnim 1s infinite ease-in-out;
+  animation:waveAnim 1s infinite;
 }
 
-.wave span:nth-child(2){animation-delay:0.1s;}
-.wave span:nth-child(3){animation-delay:0.2s;}
-.wave span:nth-child(4){animation-delay:0.3s;}
-.wave span:nth-child(5){animation-delay:0.4s;}
+.wave span:nth-child(2){animation-delay:.1s;}
+.wave span:nth-child(3){animation-delay:.2s;}
+.wave span:nth-child(4){animation-delay:.3s;}
+.wave span:nth-child(5){animation-delay:.4s;}
 
 @keyframes waveAnim{
-  0%,100%{height:15px;opacity:0.6;}
-  50%{height:55px;opacity:1;}
+  0%,100%{height:15px;}
+  50%{height:55px;}
 }
 
 .vibe-text{
   margin-top:10px;
   font-size:13px;
   color:#aaa;
-  letter-spacing:1px;
 }
 
 footer{
@@ -188,9 +163,9 @@ footer{
 
 <body>
 
-<!-- 🎥 Background Video (UNMUTED) -->
-<video autoplay loop>
-  <source src="bg.mp4">
+<!-- 🎥 VIDEO FIXED -->
+<video id="bgVideo" autoplay loop playsinline preload="auto" poster="bg.jpg">
+  <source src="bg.mp4" type="video/mp4">
 </video>
 
 <div class="overlay"></div>
@@ -204,7 +179,7 @@ footer{
 
     <p>
       Hi! I'm Yash — 16 years old school student from India 🇮🇳 <br>
-      Living where I belong, dreaming big and growing every day.
+      Dream big. Stay focused. Keep growing 🚀
     </p>
 
     <div class="section">
@@ -212,54 +187,61 @@ footer{
       <ul>
         <li><strong>Country:</strong> India</li>
         <li><strong>Age:</strong> 16</li>
-        <li><strong>Class:</strong> School Student</li>
-        <li><strong>Hobbies:</strong> Learning, exploring, self growth</li>
+        <li><strong>Class:</strong> Student</li>
+        <li><strong>Hobbies:</strong> Learning, exploring</li>
       </ul>
     </div>
 
-    <!-- 🎧 MUSIC UI (visual only, no audio now) -->
     <div class="music-box">
-
       <img src="cover.jpg" class="song-cover">
-
-      🎧 Now Playing
-
       <div class="wave">
         <span></span><span></span><span></span><span></span><span></span>
       </div>
-
-      <p class="vibe-text">Listen full vibe</p>
-
+      <p class="vibe-text">Tap anywhere for sound 🔊</p>
     </div>
 
     <div class="section">
       <h2>Skills</h2>
       <ul>
         <li>Creative Thinking</li>
-        <li>Communication</li>
         <li>Problem Solving</li>
-        <li>Learning & Exploring</li>
-        <li>Self Improvement</li>
+        <li>Self Growth</li>
+        <li>Exploring Tech</li>
       </ul>
     </div>
 
     <a href="https://t.me/YAsHSTARK_18" target="_blank" class="btn">
-      Contact Me on Telegram
+      Telegram
     </a>
 
     <br>
 
-    <a href="https://www.instagram.com/soul_faith.x?igsh=NXFlYjAyYTd4cnZh" target="_blank" class="btn insta">
-      Follow Me on Instagram
+    <a href="https://www.instagram.com/soul_faith.x" target="_blank" class="btn insta">
+      Instagram
     </a>
 
     <footer>
-      © 2026 Yash. All rights reserved. <br>
-      Built by Yash ⚡
+      © 2026 Yash ⚡
     </footer>
 
   </div>
 </div>
+
+<!-- 🔥 AUTOPLAY + FIX -->
+<script>
+const video = document.getElementById("bgVideo");
+
+// force play on load
+window.addEventListener("load", () => {
+  video.play().catch(()=>{});
+});
+
+// click fallback (for mobile autoplay block)
+document.body.addEventListener("click", () => {
+  video.muted = false;
+  video.play();
+});
+</script>
 
 </body>
 </html>
