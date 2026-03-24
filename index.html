@@ -17,7 +17,6 @@ body,html{
   overflow:hidden;
 }
 
-/* VIDEO */
 video{
   position:fixed;
   top:0;left:0;
@@ -69,16 +68,9 @@ video{
 
 h1{font-size:2.8em;margin-bottom:10px;}
 
-p{
-  font-size:1.1em;
-  line-height:1.6;
-  color:#ddd;
-}
+p{font-size:1.1em;line-height:1.6;color:#ddd;}
 
-.section{
-  margin-top:30px;
-  text-align:left;
-}
+.section{margin-top:30px;text-align:left;}
 
 .section h2{
   margin-bottom:10px;
@@ -86,19 +78,79 @@ p{
   padding-bottom:5px;
 }
 
-.section ul{
-  list-style:none;
-  line-height:1.9;
+.section ul{list-style:none;line-height:1.9;}
+.section ul li::before{content:"› ";color:#00c6ff;}
+
+/* 🎧 Spotify Card */
+.music{
+  margin-top:30px;
+  background:rgba(0,0,0,0.6);
+  padding:15px;
+  border-radius:15px;
+  display:flex;
+  align-items:center;
+  gap:15px;
 }
 
-.section ul li::before{
-  content:"› ";
-  color:#00c6ff;
+.music img{
+  width:70px;
+  height:70px;
+  border-radius:10px;
 }
 
+.music-info{
+  flex:1;
+  text-align:left;
+}
+
+.music-info h3{
+  font-size:1em;
+}
+
+.music-info span{
+  font-size:0.8em;
+  color:#aaa;
+}
+
+/* ▶️ Play button */
+.play{
+  width:40px;height:40px;
+  border-radius:50%;
+  background:#1db954;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+
+/* 🌊 Wave */
+.wave{
+  display:flex;
+  gap:3px;
+  margin-top:8px;
+}
+
+.wave span{
+  width:3px;
+  height:10px;
+  background:#1db954;
+  animation:wave 1s infinite;
+}
+
+.wave span:nth-child(2){animation-delay:0.2s;}
+.wave span:nth-child(3){animation-delay:0.4s;}
+.wave span:nth-child(4){animation-delay:0.6s;}
+.wave span:nth-child(5){animation-delay:0.8s;}
+
+@keyframes wave{
+  0%,100%{height:8px;}
+  50%{height:18px;}
+}
+
+/* 🔘 Buttons */
 .btn{
   display:inline-block;
-  margin-top:20px;
+  margin-top:30px;
   padding:14px 30px;
   border-radius:50px;
   text-decoration:none;
@@ -113,60 +165,18 @@ p{
   box-shadow:0 0 25px #00c6ff;
 }
 
+/* Instagram */
 .insta{
-  background:linear-gradient(135deg,#ff00cc,#3333ff);
-  box-shadow:0 0 15px #ff00cc;
+  display:inline-block;
+  margin-top:15px;
+  padding:12px 25px;
+  border-radius:50px;
+  text-decoration:none;
+  color:#fff;
+  background:linear-gradient(45deg,#feda75,#d62976,#962fbf);
 }
 
-.music-box{
-  margin-top:30px;
-  padding:20px;
-  border-radius:20px;
-  background:rgba(255,255,255,0.05);
-}
-
-.song-cover{
-  width:120px;
-  height:120px;
-  border-radius:15px;
-  object-fit:cover;
-  margin-bottom:10px;
-}
-
-/* WAVE SAME */
-.wave{
-  display:flex;
-  justify-content:center;
-  align-items:end;
-  gap:6px;
-  height:60px;
-  margin-top:10px;
-}
-
-.wave span{
-  width:6px;
-  height:20px;
-  border-radius:10px;
-  background:linear-gradient(180deg,#00c6ff,#0072ff);
-  animation:waveAnim 1s infinite ease-in-out;
-}
-
-.wave span:nth-child(2){animation-delay:0.1s;}
-.wave span:nth-child(3){animation-delay:0.2s;}
-.wave span:nth-child(4){animation-delay:0.3s;}
-.wave span:nth-child(5){animation-delay:0.4s;}
-
-@keyframes waveAnim{
-  0%,100%{height:15px;opacity:0.6;}
-  50%{height:55px;opacity:1;}
-}
-
-.vibe-text{
-  margin-top:10px;
-  font-size:13px;
-  color:#aaa;
-}
-
+/* Footer */
 footer{
   margin-top:40px;
   font-size:0.9em;
@@ -177,8 +187,7 @@ footer{
 
 <body>
 
-<!-- 🎥 VIDEO -->
-<video id="bgVideo" autoplay muted loop playsinline preload="auto" poster="bg.jpg">
+<video autoplay muted loop>
   <source src="bg.mp4" type="video/mp4">
 </video>
 
@@ -196,6 +205,7 @@ footer{
       Living where I belong, dreaming big and growing every day.
     </p>
 
+    <!-- About -->
     <div class="section">
       <h2>About Me</h2>
       <ul>
@@ -206,15 +216,23 @@ footer{
       </ul>
     </div>
 
-    <div class="music-box">
-      <img src="cover.jpg" class="song-cover">
-      🎧 Now Playing
-      <div class="wave">
-        <span></span><span></span><span></span><span></span><span></span>
+    <!-- 🎧 MUSIC PLAYER -->
+    <div class="music">
+      <img src="cover.jpg">
+      <div class="music-info">
+        <h3>Bairan</h3>
+        <span>Now Playing</span>
+
+        <div class="wave">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
       </div>
-      <p class="vibe-text">Auto sound attempt 🔊</p>
+      <div class="play" onclick="toggleMusic()">▶</div>
     </div>
 
+    <audio id="audio" src="song.mp3"></audio>
+
+    <!-- Skills -->
     <div class="section">
       <h2>Skills</h2>
       <ul>
@@ -226,13 +244,14 @@ footer{
       </ul>
     </div>
 
+    <!-- Buttons -->
     <a href="https://t.me/YAsHSTARK_18" target="_blank" class="btn">
       Contact Me on Telegram
     </a>
 
     <br>
 
-    <a href="https://www.instagram.com/soul_faith.x" target="_blank" class="btn insta">
+    <a href="https://www.instagram.com/soul_faith.x?igsh=NXFlYjAyYTd4cnZh" target="_blank" class="insta">
       Follow Me on Instagram
     </a>
 
@@ -244,26 +263,16 @@ footer{
   </div>
 </div>
 
-<!-- 🔥 PRO AUTOPLAY HACK -->
 <script>
-const video = document.getElementById("bgVideo");
+let audio = document.getElementById("audio");
 
-// force play
-window.addEventListener("load", () => {
-  video.play().catch(()=>{});
-});
-
-// auto unmute attempt
-setTimeout(() => {
-  video.muted = false;
-  video.play().catch(()=>{});
-}, 500);
-
-// fallback click
-document.body.addEventListener("click", () => {
-  video.muted = false;
-  video.play();
-});
+function toggleMusic(){
+  if(audio.paused){
+    audio.play();
+  }else{
+    audio.pause();
+  }
+}
 </script>
 
 </body>
