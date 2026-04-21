@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>YASH | The Creator 🔥</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>YASH | Creator • Developer • Builder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        /* --------------------------------------------- */
+        /* RESET — EXTREME CLEAN
+        /* --------------------------------------------- */
         * {
             margin: 0;
             padding: 0;
@@ -14,124 +17,25 @@
         }
 
         body {
-            font-family: 'Space Grotesk', sans-serif;
-            background: #050505;
-            color: #fff;
-            overflow-x: hidden;
-            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+            background: #05050A;
+            color: #FFFFFF;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* ========== SMOOTH EVERYTHING ========== */
-        * {
-            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        /* --------------------------------------------- */
+        /* SMOOTH GLOBAL TRANSITIONS (MAKHAN) 
+        /* --------------------------------------------- */
+        a, button, .link-card, .social-icon, .project-card, .skill-badge {
+            transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
 
-        /* ========== EPIC INTRO ========== */
-        .intro {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, #0a0a0a, #000);
-            z-index: 10000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: introFade 3.5s ease forwards;
-            pointer-events: none;
-        }
-
-        @keyframes introFade {
-            0% { opacity: 1; }
-            70% { opacity: 1; }
-            100% { opacity: 0; visibility: hidden; }
-        }
-
-        .intro-box {
-            text-align: center;
-            animation: introZoom 1s cubic-bezier(0.34, 1.2, 0.64, 1);
-        }
-
-        @keyframes introZoom {
-            0% { transform: scale(0.2) rotate(-10deg); opacity: 0; }
-            60% { transform: scale(1.05); }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
-        .intro-logo {
-            width: 140px;
-            height: 140px;
-            margin: 0 auto 25px;
-            background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
-            background-size: 300% 300%;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 70px;
-            font-weight: 800;
-            animation: pulseGlow 1.8s infinite, bgFlow 4s infinite;
-            box-shadow: 0 0 80px rgba(255, 107, 107, 0.7);
-        }
-
-        @keyframes pulseGlow {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.6); }
-            50% { transform: scale(1.05); box-shadow: 0 0 0 40px rgba(255, 107, 107, 0); }
-        }
-
-        @keyframes bgFlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .intro-text {
-            font-size: 48px;
-            font-weight: 800;
-            background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200% auto;
-            animation: textFlow 3s infinite;
-            letter-spacing: 4px;
-        }
-
-        @keyframes textFlow {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 200% 50%; }
-        }
-
-        .intro-sub {
-            font-size: 16px;
-            color: #aaa;
-            margin-top: 12px;
-            letter-spacing: 2px;
-        }
-
-        .intro-bar {
-            width: 250px;
-            height: 3px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 3px;
-            margin: 25px auto 0;
-            overflow: hidden;
-        }
-
-        .intro-bar-fill {
-            width: 0%;
-            height: 100%;
-            background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb);
-            animation: fillBar 3s ease forwards;
-        }
-
-        @keyframes fillBar {
-            0% { width: 0%; }
-            100% { width: 100%; }
-        }
-
-        /* ========== SMOOTH BACKGROUND ========== */
-        .bg {
+        /* --------------------------------------------- */
+        /* ANIMATED BACKGROUND — DEEP & RICH
+        /* --------------------------------------------- */
+        .bg-canvas {
             position: fixed;
             top: 0;
             left: 0;
@@ -140,215 +44,212 @@
             z-index: -2;
         }
 
-        .bg-gradient {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 30% 20%, #1a0a2e, #050505);
-        }
-
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(120px);
-            animation: orbMove 22s infinite ease-in-out;
-        }
-
-        .orb1 { width: 500px; height: 500px; background: #ff6b6b; top: -20%; left: -15%; opacity: 0.3; animation-delay: 0s; }
-        .orb2 { width: 600px; height: 600px; background: #48dbfb; bottom: -30%; right: -15%; opacity: 0.3; animation-delay: -7s; }
-        .orb3 { width: 450px; height: 450px; background: #feca57; top: 40%; left: 25%; opacity: 0.25; animation-delay: -14s; }
-        .orb4 { width: 400px; height: 400px; background: #ff9ff3; bottom: 25%; right: 20%; opacity: 0.25; animation-delay: -21s; }
-
-        @keyframes orbMove {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(5%, -5%) scale(1.1); }
-            66% { transform: translate(-5%, 5%) scale(0.9); }
-        }
-
-        canvas {
+        .gradient-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
+            z-index: -3;
+            background: radial-gradient(circle at 20% 30%, #110B2A, #02010A);
         }
 
-        /* ========== MAIN CARD - BUTTER SMOOTH ========== */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            animation: floatOrb 22s infinite alternate ease-in-out;
+        }
+
+        .orb1 { width: 550px; height: 550px; background: #FF4D6D; top: -15%; left: -10%; opacity: 0.35; animation-duration: 18s; }
+        .orb2 { width: 650px; height: 650px; background: #3B82F6; bottom: -25%; right: -15%; opacity: 0.3; animation-duration: 22s; }
+        .orb3 { width: 480px; height: 480px; background: #F97316; top: 45%; left: 20%; opacity: 0.25; animation-duration: 26s; }
+        .orb4 { width: 420px; height: 420px; background: #A855F7; bottom: 15%; right: 20%; opacity: 0.3; animation-duration: 20s; }
+        .orb5 { width: 380px; height: 380px; background: #06B6D4; top: 70%; left: 70%; opacity: 0.25; animation-duration: 24s; }
+
+        @keyframes floatOrb {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(4%, 4%) scale(1.1); }
+        }
+
+        /* --------------------------------------------- */
+        /* PREMIUM GLASS CARD
+        /* --------------------------------------------- */
         .container {
-            max-width: 750px;
+            max-width: 860px;
             width: 90%;
             margin: 0 auto;
-            padding: 100px 0 60px;
+            padding: 100px 0 70px;
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
-        .card {
-            background: rgba(10, 10, 10, 0.55);
+        .glass-card {
+            background: rgba(12, 12, 22, 0.55);
             backdrop-filter: blur(18px);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 70px;
-            padding: 55px 45px;
-            text-align: center;
-            transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            animation: cardSoftGlow 4s infinite alternate;
+            border-radius: 64px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 56px 48px;
+            transition: all 0.45s ease;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.4);
         }
 
-        @keyframes cardSoftGlow {
-            0% { box-shadow: 0 0 20px rgba(255, 107, 107, 0.05); border-color: rgba(255,255,255,0.08); }
-            100% { box-shadow: 0 0 50px rgba(255, 107, 107, 0.2); border-color: rgba(255, 107, 107, 0.4); }
-        }
-
-        .card:hover {
+        .glass-card:hover {
             transform: translateY(-6px);
+            border-color: rgba(255, 77, 109, 0.5);
+            box-shadow: 0 30px 55px -12px rgba(255, 77, 109, 0.2);
         }
 
-        /* ========== PROFILE - PHOTO FIXED ========== */
-        .photo-wrap {
+        /* --------------------------------------------- */
+        /* PROFILE SECTION — PHOTO FIXED
+        /* --------------------------------------------- */
+        .profile-wrapper {
             position: relative;
             width: 170px;
             height: 170px;
-            margin: 0 auto 25px;
+            margin: 0 auto 28px;
         }
 
         .ring {
             position: absolute;
-            top: -8px;
-            left: -8px;
-            width: 186px;
-            height: 186px;
+            inset: -8px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb);
-            animation: spinRing 5s linear infinite;
+            background: linear-gradient(135deg, #FF4D6D, #F97316, #3B82F6);
+            animation: rotateRing 6s linear infinite;
         }
 
-        @keyframes spinRing {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        @keyframes rotateRing {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
-        .photo {
+        .profile-img {
             position: relative;
-            width: 160px;
-            height: 160px;
-            margin: 5px auto 0;
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
             overflow: hidden;
-            border: 3px solid #fff;
-            background: #1a1a2e;
+            border: 3px solid #FFFFFF;
+            background: #1A1A2E;
         }
 
-        .photo img {
+        .profile-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .online-badge {
+        .online-dot {
             position: absolute;
-            bottom: 12px;
-            right: 12px;
+            bottom: 8px;
+            right: 8px;
             width: 22px;
             height: 22px;
-            background: #10b981;
+            background: #10B981;
             border-radius: 50%;
-            border: 3px solid #fff;
+            border: 3px solid #FFFFFF;
             animation: softPulse 2s infinite;
         }
 
         @keyframes softPulse {
             0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.15); opacity: 0.8; }
+            50% { transform: scale(1.12); opacity: 0.85; }
         }
 
-        /* ========== TEXT ========== */
+        /* --------------------------------------------- */
+        /* TYPOGRAPHY — BADA & CLEAR
+        /* --------------------------------------------- */
         .name {
-            font-size: 48px;
+            font-size: 56px;
             font-weight: 800;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb);
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #FFFFFF, #FFB347, #FF4D6D);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200% auto;
-            animation: gradientFlow 4s infinite;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 12px;
         }
 
-        @keyframes gradientFlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .handle {
+        .handle-section {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            margin-bottom: 25px;
+            gap: 14px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
         }
 
-        .handle span {
-            font-size: 18px;
-            color: #bbb;
+        .handle {
+            font-size: 20px;
+            color: #B0B3C0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px 18px;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
         }
 
-        .copy {
-            background: rgba(255,255,255,0.08);
-            border: none;
-            padding: 6px 16px;
+        .handle i {
+            color: #FF4D6D;
+            margin-right: 8px;
+        }
+
+        .copy-btn {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 8px 22px;
             border-radius: 40px;
-            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            color: #FFFFFF;
             cursor: pointer;
-            font-size: 12px;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
         }
 
-        .copy:hover {
-            background: #ff6b6b;
-            transform: scale(1.03);
+        .copy-btn:hover {
+            background: #FF4D6D;
+            border-color: #FF4D6D;
+            transform: scale(1.02);
         }
 
         .bio {
-            font-size: 17px;
-            line-height: 1.8;
-            color: #ccc;
-            margin-bottom: 40px;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #C9CBD6;
+            margin-bottom: 48px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .highlight {
-            background: linear-gradient(135deg, #ff6b6b, #feca57);
+        .bio strong {
+            background: linear-gradient(135deg, #FFB347, #FF4D6D);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 600;
+            background-clip: text;
+            color: transparent;
         }
 
-        /* ========== BUTTONS - SMOOTH ========== */
-        .links {
-            margin: 40px 0;
+        /* --------------------------------------------- */
+        /* LINK CARDS — PREMIUM & SMOOTH
+        /* --------------------------------------------- */
+        .links-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-bottom: 52px;
         }
 
-        .link {
+        .link-card {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 18px 28px;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 80px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 100px;
+            padding: 14px 24px;
             text-decoration: none;
-            margin-bottom: 18px;
-            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.2);
         }
 
-        .link:hover {
-            transform: translateX(12px) translateY(-3px);
-            border-color: #ff6b6b;
-            background: rgba(255, 107, 107, 0.1);
-        }
-
-        .link-left {
+        .link-card-left {
             display: flex;
             align-items: center;
             gap: 20px;
@@ -357,352 +258,386 @@
         .link-icon {
             width: 52px;
             height: 52px;
-            background: rgba(255,255,255,0.06);
-            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 22px;
-            transition: all 0.3s;
+            font-size: 26px;
         }
 
-        .link:hover .link-icon {
-            background: #ff6b6b;
-            transform: scale(1.08);
+        .link-card:hover .link-icon {
+            background: #FF4D6D;
+            transform: scale(1.05);
         }
 
-        .link-info h4 {
-            font-size: 18px;
+        .link-info h3 {
+            font-size: 20px;
             font-weight: 600;
-            color: #fff;
-            margin-bottom: 4px;
+            color: #FFFFFF;
         }
 
         .link-info p {
-            font-size: 12px;
-            color: #aaa;
+            font-size: 14px;
+            color: #9CA3AF;
         }
 
-        .link-arrow {
-            color: #aaa;
-            transition: all 0.3s;
+        .arrow-icon {
+            color: #9CA3AF;
+            font-size: 20px;
         }
 
-        .link:hover .link-arrow {
-            transform: translateX(8px);
-            color: #ff6b6b;
+        .link-card:hover {
+            background: rgba(255, 77, 109, 0.1);
+            border-color: #FF4D6D;
+            transform: translateX(8px) translateY(-2px);
         }
 
-        /* ========== SOCIAL ICONS ========== */
-        .socials {
+        .link-card:hover .arrow-icon {
+            transform: translateX(6px);
+            color: #FF4D6D;
+        }
+
+        /* --------------------------------------------- */
+        /* SOCIAL ROW — BIG ICONS
+        /* --------------------------------------------- */
+        .social-row {
             display: flex;
             justify-content: center;
-            gap: 22px;
-            margin: 40px 0;
+            gap: 28px;
+            margin-bottom: 56px;
             flex-wrap: wrap;
         }
 
-        .social {
-            width: 58px;
-            height: 58px;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 50%;
+        .social-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #fff;
-            font-size: 26px;
-            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+            font-size: 28px;
+            color: #FFFFFF;
             text-decoration: none;
         }
 
-        .social:hover {
-            transform: translateY(-7px) scale(1.05);
+        .social-icon:hover {
+            transform: translateY(-6px) scale(1.05);
         }
 
-        .social.insta:hover { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); border-color: transparent; }
-        .social.tg:hover { background: #0088cc; border-color: transparent; }
-        .social.gh:hover { background: #171515; border-color: transparent; }
-        .social.yt:hover { background: #ff0000; border-color: transparent; }
-        .social.tw:hover { background: #1da1f2; border-color: transparent; }
+        .social-icon[data-name="instagram"]:hover { background: radial-gradient(circle at 30% 110%, #ffdb70, #e4405f, #c13584); border-color: transparent; }
+        .social-icon[data-name="telegram"]:hover { background: #0088cc; border-color: transparent; }
+        .social-icon[data-name="github"]:hover { background: #181717; border-color: transparent; }
+        .social-icon[data-name="youtube"]:hover { background: #FF0000; border-color: transparent; }
+        .social-icon[data-name="twitter"]:hover { background: #1DA1F2; border-color: transparent; }
+        .social-icon[data-name="share"]:hover { background: #FF4D6D; border-color: transparent; }
 
-        /* ========== QUOTE ========== */
-        .quote {
-            background: rgba(255,255,255,0.03);
-            border-radius: 35px;
-            padding: 28px;
-            margin: 40px 0;
-            text-align: center;
-            border-left: 4px solid #ff6b6b;
-        }
-
-        .quote i { font-size: 30px; color: #ff6b6b; margin-bottom: 12px; display: block; }
-        .quote-text { font-size: 16px; font-style: italic; color: #ccc; line-height: 1.6; }
-        .quote-author { font-size: 13px; color: #ff6b6b; margin-top: 12px; }
-
-        /* ========== PROJECTS ========== */
-        .projects {
-            margin: 40px 0;
-        }
-
+        /* --------------------------------------------- */
+        /* PROJECTS — MODERN GRID
+        /* --------------------------------------------- */
         .section-title {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 25px;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 28px;
             text-align: center;
+            letter-spacing: -0.3px;
         }
 
-        .section-title i { margin-right: 10px; color: #ff6b6b; }
+        .section-title i {
+            color: #FF4D6D;
+            margin-right: 12px;
+        }
 
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
+            gap: 24px;
+            margin-bottom: 56px;
         }
 
-        .project {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 30px;
-            padding: 22px;
+        .project-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 32px;
+            padding: 28px 20px;
             text-align: center;
-            transition: all 0.3s ease;
         }
 
-        .project:hover {
+        .project-card:hover {
+            border-color: #FF4D6D;
             transform: translateY(-5px);
-            border-color: #ff6b6b;
+            background: rgba(255, 77, 109, 0.05);
         }
 
         .project-icon {
-            width: 55px;
-            height: 55px;
-            background: linear-gradient(135deg, #ff6b6b, #feca57);
-            border-radius: 18px;
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(145deg, #FF4D6D, #F97316);
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 26px;
-            margin: 0 auto 15px;
+            font-size: 30px;
+            margin: 0 auto 18px;
         }
 
-        .project h4 { font-size: 17px; margin-bottom: 8px; }
-        .project p { font-size: 12px; color: #aaa; margin-bottom: 12px; }
-        .project-link { color: #ff6b6b; text-decoration: none; font-size: 13px; font-weight: 500; }
-
-        /* ========== SKILLS ========== */
-        .skills {
-            margin: 40px 0;
+        .project-card h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
         }
 
-        .skills-grid {
+        .project-card p {
+            color: #9CA3AF;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .project-link {
+            color: #FF4D6D;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .project-link i {
+            transition: transform 0.2s;
+        }
+
+        .project-card:hover .project-link i {
+            transform: translateX(4px);
+        }
+
+        /* --------------------------------------------- */
+        /* SKILLS — CLEAN BUBBLES
+        /* --------------------------------------------- */
+        .skills-wrapper {
+            margin-bottom: 56px;
+        }
+
+        .skills-cloud {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 14px;
         }
 
-        .skill {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 50px;
-            padding: 10px 24px;
-            font-size: 14px;
-            transition: all 0.3s ease;
+        .skill-badge {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px 28px;
+            border-radius: 60px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.25s ease;
         }
 
-        .skill:hover {
-            background: linear-gradient(135deg, #ff6b6b, #feca57);
+        .skill-badge:hover {
+            background: linear-gradient(135deg, #FF4D6D, #F97316);
             transform: translateY(-3px);
             border-color: transparent;
         }
 
-        /* ========== FOOTER ========== */
+        /* --------------------------------------------- */
+        /* QUOTE + FOOTER
+        /* --------------------------------------------- */
+        .quote-block {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 4px solid #FF4D6D;
+            border-radius: 32px;
+            padding: 28px 32px;
+            margin-bottom: 48px;
+            text-align: center;
+        }
+
+        .quote-text {
+            font-size: 18px;
+            font-style: italic;
+            color: #E5E7EB;
+            line-height: 1.5;
+        }
+
+        .quote-author {
+            margin-top: 14px;
+            color: #FF4D6D;
+            font-weight: 500;
+        }
+
         .footer {
             text-align: center;
-            margin-top: 45px;
-            padding-top: 25px;
-            border-top: 1px solid rgba(255,255,255,0.08);
-            font-size: 13px;
-            color: #aaa;
-        }
-
-        .footer a { color: #ff6b6b; text-decoration: none; }
-
-        /* ========== TOAST ========== */
-        .toast {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #1a1a1a;
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 60px;
-            padding: 12px 28px;
-            z-index: 10001;
-            display: none;
             font-size: 14px;
-            backdrop-filter: blur(10px);
-        }
-        .toast.show { display: block; animation: fadeUp 0.3s ease; }
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateX(-50%) translateY(20px); }
-            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+            color: #6B7280;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 32px;
         }
 
-        @media (max-width: 650px) {
-            .container { width: 92%; padding: 80px 0 40px; }
-            .card { padding: 35px 22px; }
-            .name { font-size: 36px; }
-            .projects-grid { grid-template-columns: 1fr; gap: 14px; }
-            .link { padding: 14px 20px; }
-            .link-icon { width: 44px; height: 44px; font-size: 18px; }
+        .footer i {
+            color: #FF4D6D;
+        }
+
+        /* --------------------------------------------- */
+        /* RESPONSIVE — CLEAN & BIG SPACING
+        /* --------------------------------------------- */
+        @media (max-width: 700px) {
+            .glass-card {
+                padding: 38px 24px;
+            }
+            .name {
+                font-size: 42px;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .link-card {
+                padding: 12px 18px;
+            }
+            .link-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 22px;
+            }
+            .link-info h3 {
+                font-size: 16px;
+            }
+            .social-icon {
+                width: 54px;
+                height: 54px;
+                font-size: 24px;
+            }
         }
     </style>
 </head>
 <body>
 
-<!-- EPIC INTRO -->
-<div class="intro">
-    <div class="intro-box">
-        <div class="intro-logo"><span>Y</span></div>
-        <div class="intro-text">YASH BUILDS</div>
-        <div class="intro-sub">The Creator</div>
-        <div class="intro-bar"><div class="intro-bar-fill"></div></div>
-    </div>
-</div>
-
-<!-- SMOOTH BG -->
-<div class="bg">
-    <div class="bg-gradient"></div>
-    <div class="orb orb1"></div>
-    <div class="orb orb2"></div>
-    <div class="orb orb3"></div>
-    <div class="orb orb4"></div>
-</div>
-<canvas id="particleCanvas"></canvas>
+<div class="gradient-bg"></div>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+<div class="orb orb4"></div>
+<div class="orb orb5"></div>
+<canvas class="bg-canvas" id="particlesCanvas"></canvas>
 
 <main class="container">
-    <div class="card">
-        <!-- PHOTO - auto loads photo.jpg from same folder -->
-        <div class="photo-wrap">
+    <div class="glass-card">
+        
+        <!-- PROFILE : PHOTO.JPG from same folder -->
+        <div class="profile-wrapper">
             <div class="ring"></div>
-            <div class="photo">
-                <img src="photo.jpg" alt="YASH" id="profilePhoto" onerror="this.src='https://ui-avatars.com/api/?background=ff6b6b&color=fff&size=160&name=Y&rounded=true&bold=true&length=1&fontsize=80'">
+            <div class="profile-img">
+                <img src="photo.jpg" alt="YASH" id="userPhoto" onerror="this.src='https://ui-avatars.com/api/?background=FF4D6D&color=fff&size=170&name=Y&bold=true&length=1&fontsize=85'">
             </div>
-            <div class="online-badge"></div>
+            <div class="online-dot"></div>
         </div>
 
         <h1 class="name">YASH</h1>
-        
-        <div class="handle">
-            <span><i class="fab fa-instagram"></i> @soul_faith.x</span>
-            <button class="copy" id="copyHandle"><i class="fas fa-copy"></i> Copy</button>
+
+        <div class="handle-section">
+            <div class="handle"><i class="fab fa-instagram"></i> @soul_faith.x</div>
+            <button class="copy-btn" id="copyUsernameBtn"><i class="fas fa-copy"></i> Copy username</button>
         </div>
 
         <div class="bio">
-            🚀 <span class="highlight">YASH BUILDS</span> | Developer & Creator<br>
-            Building next-gen web experiences 🌐<br>
-            💻 2+ Years of Coding | 50+ Projects
+            <strong>YASH BUILDS</strong> · Developer & Creator<br>
+            Building next‑gen digital experiences · 2+ years of coding · 50+ projects shipped
         </div>
 
-        <!-- LINKS - ALL WORKING -->
-        <div class="links">
-            <a href="https://www.instagram.com/soul_faith.x" target="_blank" class="link">
-                <div class="link-left"><div class="link-icon"><i class="fab fa-instagram"></i></div><div class="link-info"><h4>Instagram</h4><p>Follow me on Instagram</p></div></div>
-                <div class="link-arrow"><i class="fas fa-arrow-right"></i></div>
+        <!-- ========== LINKS (ALL WORKING) ========= -->
+        <div class="links-grid">
+            <a href="https://www.instagram.com/soul_faith.x" target="_blank" class="link-card">
+                <div class="link-card-left"><div class="link-icon"><i class="fab fa-instagram"></i></div><div class="link-info"><h3>Instagram</h3><p>Daily updates & projects</p></div></div>
+                <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
             </a>
-            <a href="https://late-reply.vercel.app" target="_blank" class="link">
-                <div class="link-left"><div class="link-icon"><i class="fas fa-globe"></i></div><div class="link-info"><h4>Late Reply</h4><p>Creative web experience</p></div></div>
-                <div class="link-arrow"><i class="fas fa-arrow-right"></i></div>
+            <a href="https://late-reply.vercel.app" target="_blank" class="link-card">
+                <div class="link-card-left"><div class="link-icon"><i class="fas fa-globe"></i></div><div class="link-info"><h3>Late Reply</h3><p>Unique web experience</p></div></div>
+                <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
             </a>
-            <a href="https://sweet-lyrics.vercel.app" target="_blank" class="link">
-                <div class="link-left"><div class="link-icon"><i class="fas fa-music"></i></div><div class="link-info"><h4>Sweet Lyrics</h4><p>Music & lyrics platform</p></div></div>
-                <div class="link-arrow"><i class="fas fa-arrow-right"></i></div>
+            <a href="https://sweet-lyrics.vercel.app" target="_blank" class="link-card">
+                <div class="link-card-left"><div class="link-icon"><i class="fas fa-music"></i></div><div class="link-info"><h3>Sweet Lyrics</h3><p>Lyrics & vibes</p></div></div>
+                <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
             </a>
-            <a href="https://t.me/Yash_help_robot" target="_blank" class="link">
-                <div class="link-left"><div class="link-icon"><i class="fab fa-telegram"></i></div><div class="link-info"><h4>Telegram Bot</h4><p>@Yash_help_robot</p></div></div>
-                <div class="link-arrow"><i class="fas fa-arrow-right"></i></div>
+            <a href="https://t.me/Yash_help_robot" target="_blank" class="link-card">
+                <div class="link-card-left"><div class="link-icon"><i class="fab fa-telegram"></i></div><div class="link-info"><h3>Telegram Bot</h3><p>@Yash_help_robot — support</p></div></div>
+                <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
             </a>
         </div>
 
-        <!-- SOCIAL ICONS -->
-        <div class="socials">
-            <a href="https://www.instagram.com/soul_faith.x" target="_blank" class="social insta"><i class="fab fa-instagram"></i></a>
-            <a href="https://t.me/Yash_help_robot" target="_blank" class="social tg"><i class="fab fa-telegram"></i></a>
-            <a href="https://github.com/Yashst" target="_blank" class="social gh"><i class="fab fa-github"></i></a>
-            <a href="https://youtube.com/@yash" target="_blank" class="social yt"><i class="fab fa-youtube"></i></a>
-            <a href="https://twitter.com/yash" target="_blank" class="social tw"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social" id="shareNow"><i class="fas fa-share-alt"></i></a>
+        <!-- SOCIAL ROW : only useful platforms -->
+        <div class="social-row">
+            <a href="https://www.instagram.com/soul_faith.x" target="_blank" class="social-icon" data-name="instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://t.me/Yash_help_robot" target="_blank" class="social-icon" data-name="telegram"><i class="fab fa-telegram"></i></a>
+            <a href="#" class="social-icon" data-name="share" id="shareButton"><i class="fas fa-share-alt"></i></a>
         </div>
 
-        <!-- PROJECTS -->
-        <div class="projects">
-            <div class="section-title"><i class="fas fa-code"></i> Featured Work</div>
-            <div class="projects-grid">
-                <div class="project"><div class="project-icon"><i class="fas fa-globe"></i></div><h4>YASH HOSTENGER</h4><p>Python hosting platform</p><a href="#" class="project-link">Learn more →</a></div>
-                <div class="project"><div class="project-icon"><i class="fas fa-bolt"></i></div><h4>Late Reply</h4><p>Creative web experience</p><a href="https://late-reply.vercel.app" target="_blank" class="project-link">Visit →</a></div>
-                <div class="project"><div class="project-icon"><i class="fas fa-music"></i></div><h4>Sweet Lyrics</h4><p>Music & lyrics platform</p><a href="https://sweet-lyrics.vercel.app" target="_blank" class="project-link">Visit →</a></div>
-                <div class="project"><div class="project-icon"><i class="fas fa-robot"></i></div><h4>Telegram Bot</h4><p>Support automation</p><a href="https://t.me/Yash_help_robot" target="_blank" class="project-link">Try now →</a></div>
-            </div>
+        <!-- PROJECTS SECTION -->
+        <div class="section-title"><i class="fas fa-code"></i> Featured builds</div>
+        <div class="projects-grid">
+            <div class="project-card"><div class="project-icon"><i class="fas fa-server"></i></div><h4>YASH HOSTENGER</h4><p>Python hosting platform</p><a href="#" class="project-link">Explore <i class="fas fa-arrow-right"></i></a></div>
+            <div class="project-card"><div class="project-icon"><i class="fas fa-bolt"></i></div><h4>Late Reply</h4><p>Minimal & fast</p><a href="https://late-reply.vercel.app" target="_blank" class="project-link">Visit <i class="fas fa-arrow-right"></i></a></div>
+            <div class="project-card"><div class="project-icon"><i class="fas fa-music"></i></div><h4>Sweet Lyrics</h4><p>Lyrics database</p><a href="https://sweet-lyrics.vercel.app" target="_blank" class="project-link">Visit <i class="fas fa-arrow-right"></i></a></div>
+            <div class="project-card"><div class="project-icon"><i class="fas fa-robot"></i></div><h4>Telegram Support</h4><p>24/7 assistance</p><a href="https://t.me/Yash_help_robot" target="_blank" class="project-link">Message <i class="fas fa-arrow-right"></i></a></div>
         </div>
 
         <!-- SKILLS -->
-        <div class="skills">
+        <div class="skills-wrapper">
             <div class="section-title"><i class="fas fa-cogs"></i> Tech Stack</div>
-            <div class="skills-grid">
-                <span class="skill">Python</span><span class="skill">JavaScript</span><span class="skill">React</span>
-                <span class="skill">Node.js</span><span class="skill">Flask</span><span class="skill">Docker</span>
-                <span class="skill">Git</span><span class="skill">MongoDB</span><span class="skill">HTML/CSS</span>
+            <div class="skills-cloud">
+                <span class="skill-badge">Python</span><span class="skill-badge">JavaScript</span><span class="skill-badge">React</span>
+                <span class="skill-badge">Node.js</span><span class="skill-badge">Flask</span><span class="skill-badge">Docker</span>
+                <span class="skill-badge">MongoDB</span><span class="skill-badge">Tailwind</span><span class="skill-badge">Git</span>
             </div>
         </div>
 
         <!-- QUOTE -->
-        <div class="quote">
-            <i class="fas fa-quote-left"></i>
-            <div class="quote-text" id="quoteText">Code is poetry written in logic. Every line tells a story.</div>
+        <div class="quote-block">
+            <div class="quote-text" id="dynamicQuote">“ Code is poetry written in logic. Every line tells a story. ”</div>
             <div class="quote-author" id="quoteAuthor">— YASH</div>
         </div>
 
         <div class="footer">
-            © 2025 YASH BUILDS | <i class="fas fa-heart" style="color: #ff6b6b;"></i> | Built with passion
+            © 2025 YASH BUILDS — built with <i class="fas fa-heart"></i> for the dev community
         </div>
     </div>
 </main>
 
-<div id="toast" class="toast"></div>
+<div id="toastMessage" style="position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: #1A1A2A; backdrop-filter: blur(12px); border-radius: 60px; padding: 12px 28px; z-index: 9999; display: none; font-size: 14px; border: 1px solid rgba(255,255,255,0.1);"></div>
 
 <script>
-    // ========== MAKHAN JAISA SMOOTH PARTICLES ==========
-    const canvas = document.getElementById('particleCanvas');
+    // ------------------------------------------------------------------
+    // 1) MAKHAN SMOOTH PARTICLES (butter performance)
+    // ------------------------------------------------------------------
+    const canvas = document.getElementById('particlesCanvas');
     const ctx = canvas.getContext('2d');
-    let particles = [];
-    let mouseX = 0, mouseY = 0;
-
-    function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
+    let particlesArray = [];
+    let mouse = { x: null, y: null, radius: 120 };
 
     function initParticles() {
-        particles = [];
-        for (let i = 0; i < 220; i++) {
-            particles.push({
+        particlesArray = [];
+        const num = 240;
+        for (let i = 0; i < num; i++) {
+            particlesArray.push({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
-                r: Math.random() * 2.2 + 0.6,
-                vx: (Math.random() - 0.5) * 0.4,
-                vy: (Math.random() - 0.5) * 0.4,
-                color: `hsl(${Math.random() * 40 + 350}, 75%, 62%)`
+                radius: Math.random() * 2.2 + 0.8,
+                vx: (Math.random() - 0.5) * 0.35,
+                vy: (Math.random() - 0.5) * 0.35,
+                color: `hsla(${Math.random() * 30 + 350}, 75%, 65%, 0.7)`
             });
         }
     }
 
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        initParticles();
+    }
+
     function drawParticles() {
+        if (!ctx) return;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (let i = 0; i < particles.length; i++) {
-            let p = particles[i];
+        for (let i = 0; i < particlesArray.length; i++) {
+            let p = particlesArray[i];
             p.x += p.vx;
             p.y += p.vy;
             if (p.x < 0) p.x = canvas.width;
@@ -710,29 +645,30 @@
             if (p.y < 0) p.y = canvas.height;
             if (p.y > canvas.height) p.y = 0;
 
-            let dx = mouseX - p.x;
-            let dy = mouseY - p.y;
-            let dist = Math.hypot(dx, dy);
-            if (dist < 110) {
-                let angle = Math.atan2(dy, dx);
-                let force = (110 - dist) / 110;
+            const dx = mouse.x - p.x;
+            const dy = mouse.y - p.y;
+            const dist = Math.hypot(dx, dy);
+            if (dist < mouse.radius) {
+                const angle = Math.atan2(dy, dx);
+                const force = (mouse.radius - dist) / mouse.radius;
                 p.x -= Math.cos(angle) * force * 2.2;
                 p.y -= Math.sin(angle) * force * 2.2;
             }
 
             ctx.beginPath();
-            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
             ctx.fillStyle = p.color;
             ctx.fill();
 
-            for (let j = i + 1; j < particles.length; j++) {
-                let p2 = particles[j];
-                let d = Math.hypot(p.x - p2.x, p.y - p2.y);
-                if (d < 110) {
+            // gentle connections
+            for (let j = i + 1; j < particlesArray.length; j++) {
+                const p2 = particlesArray[j];
+                const distance = Math.hypot(p.x - p2.x, p.y - p2.y);
+                if (distance < 100) {
                     ctx.beginPath();
                     ctx.moveTo(p.x, p.y);
                     ctx.lineTo(p2.x, p2.y);
-                    ctx.strokeStyle = `rgba(255, 107, 107, ${0.1 * (1 - d / 110)})`;
+                    ctx.strokeStyle = `rgba(255, 90, 110, ${0.08 * (1 - distance / 100)})`;
                     ctx.stroke();
                 }
             }
@@ -740,72 +676,93 @@
         requestAnimationFrame(drawParticles);
     }
 
+    window.addEventListener('resize', () => resizeCanvas());
     document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
     });
-
     resizeCanvas();
-    initParticles();
     drawParticles();
-    window.addEventListener('resize', () => { resizeCanvas(); initParticles(); });
 
-    // ========== COPY USERNAME ==========
-    document.getElementById('copyHandle')?.addEventListener('click', async () => {
-        await navigator.clipboard.writeText('@soul_faith.x');
-        showToast('✨ Username copied!', 'success');
+    // ------------------------------------------------------------------
+    // 2) COPY USERNAME
+    // ------------------------------------------------------------------
+    const copyBtn = document.getElementById('copyUsernameBtn');
+    const toastEl = document.getElementById('toastMessage');
+
+    function showMessage(msg, isError = false) {
+        toastEl.style.display = 'block';
+        toastEl.textContent = msg;
+        toastEl.style.background = isError ? '#2A0A0A' : '#1A1A2A';
+        toastEl.style.borderLeft = isError ? '3px solid #FF4D6D' : '3px solid #10B981';
+        setTimeout(() => {
+            toastEl.style.display = 'none';
+        }, 2200);
+    }
+
+    copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText('@soul_faith.x');
+        showMessage('✅ Username copied to clipboard');
     });
 
-    // ========== SHARE ==========
-    document.getElementById('shareNow')?.addEventListener('click', async (e) => {
+    // ------------------------------------------------------------------
+    // 3) SHARE BUTTON
+    // ------------------------------------------------------------------
+    const shareBtn = document.getElementById('shareButton');
+    shareBtn.addEventListener('click', async (e) => {
         e.preventDefault();
+        const url = window.location.href;
         if (navigator.share) {
-            await navigator.share({ title: 'YASH - Developer', url: window.location.href });
+            try {
+                await navigator.share({ title: 'YASH — Creator', url: url });
+                showMessage('✨ Shared successfully');
+            } catch (err) { showMessage('⚠️ Could not share', true); }
         } else {
-            await navigator.clipboard.writeText(window.location.href);
-            showToast('🔗 Link copied!', 'success');
+            await navigator.clipboard.writeText(url);
+            showMessage('🔗 Link copied to clipboard');
         }
     });
 
-    // ========== QUOTE ROTATOR ==========
-    const quotes = [
-        { text: 'Code is poetry written in logic. Every line tells a story.', author: '— YASH' },
-        { text: 'The only limit is your imagination. Keep building.', author: '— YASH' },
-        { text: 'Dream it. Build it. Ship it. Repeat.', author: '— YASH' },
-        { text: 'The future belongs to those who build.', author: '— YASH' },
-        { text: 'Stay hungry, stay foolish.', author: '— Steve Jobs' }
+    // ------------------------------------------------------------------
+    // 4) QUOTE ROTATOR (ULTRA SMOOTH)
+    // ------------------------------------------------------------------
+    const quoteBank = [
+        { text: '“ Code is poetry written in logic. Every line tells a story. ”', author: '— YASH' },
+        { text: '“ The only limit is your imagination. Keep building, keep creating. ”', author: '— YASH' },
+        { text: '“ Dream it. Build it. Ship it. Repeat. ”', author: '— YASH' },
+        { text: '“ The future belongs to those who build. ”', author: '— YASH' },
+        { text: '“ Make it work, make it right, make it fast. ”', author: '— YASH' }
     ];
-    let qIndex = 0;
-    setInterval(() => {
-        qIndex = (qIndex + 1) % quotes.length;
-        let q = quotes[qIndex];
-        document.getElementById('quoteText').style.opacity = '0';
-        document.getElementById('quoteAuthor').style.opacity = '0';
-        setTimeout(() => {
-            document.getElementById('quoteText').textContent = q.text;
-            document.getElementById('quoteAuthor').textContent = q.author;
-            document.getElementById('quoteText').style.opacity = '1';
-            document.getElementById('quoteAuthor').style.opacity = '1';
-        }, 280);
-    }, 5500);
+    let quoteIdx = 0;
+    const quoteTextEl = document.getElementById('dynamicQuote');
+    const quoteAuthorEl = document.getElementById('quoteAuthor');
 
-    // ========== TOAST ==========
-    function showToast(msg, type) {
-        let toast = document.getElementById('toast');
-        toast.textContent = msg;
-        toast.className = `toast show`;
-        setTimeout(() => toast.classList.remove('show'), 2600);
+    function updateQuote() {
+        quoteIdx = (quoteIdx + 1) % quoteBank.length;
+        const q = quoteBank[quoteIdx];
+        quoteTextEl.style.opacity = '0';
+        quoteAuthorEl.style.opacity = '0';
+        setTimeout(() => {
+            quoteTextEl.textContent = q.text;
+            quoteAuthorEl.textContent = q.author;
+            quoteTextEl.style.opacity = '1';
+            quoteAuthorEl.style.opacity = '1';
+        }, 200);
+    }
+    setInterval(updateQuote, 5500);
+
+    // ------------------------------------------------------------------
+    // 5) PHOTO ERROR FALLBACK
+    // ------------------------------------------------------------------
+    const profileImg = document.getElementById('userPhoto');
+    if (profileImg) {
+        profileImg.onerror = () => {
+            profileImg.src = "https://ui-avatars.com/api/?background=FF4D6D&color=fff&size=170&name=Y&bold=true&length=1&fontsize=85";
+        };
     }
 
-    // ========== HIDE INTRO ==========
-    setTimeout(() => {
-        let intro = document.querySelector('.intro');
-        if (intro) intro.style.display = 'none';
-    }, 3400);
-
-    console.log('%c🔥 YASH BIO PAGE — FINAL ULTIMATE EDITION 🔥', 'color: #ff6b6b; font-size: 18px;');
-    console.log('%c⚡ Smooth as butter ⚡', 'color: #feca57; font-size: 14px;');
+    console.log('%c🔥 GOD LEVEL BIO PAGE — ULTRA SMOOTH EDITION 🔥', 'color: #FF4D6D; font-size: 18px;');
+    console.log('%c⚡ All links active • Butter transitions • Premium UI ⚡', 'color: #F97316; font-size: 14px;');
 </script>
-
 </body>
 </html>
